@@ -1,0 +1,14 @@
+name: thj_server
+description: The Hood Junction (THJ) is an application to help each and every hood(house) to fulfil their daily needs and keep them upto date about their surroundings.
+# version: 1.0.0
+# homepage: https://www.example.com
+
+environment:
+  sdk: '>=2.19.0 <4.0.0'
+
+dependencies:
+  serverpod: ^1.1.1
+  serverpod_auth_server: ^1.1.1
+
+dev_dependencies:
+  lints: ^2.0.1
