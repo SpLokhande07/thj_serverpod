@@ -16,8 +16,7 @@ late Client client;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   client = Client(
-    // Use a local address for android, for example:
-    'https://b399-103-179-3-214.ngrok-free.app/',
+    'https://bad4-103-179-3-214.ngrok-free.app/',
     authenticationKeyManager: FlutterAuthenticationKeyManager(),
   )..connectivityMonitor = FlutterConnectivityMonitor();
   sessionManager = SessionManager(
@@ -37,7 +36,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: sessionManager.isSignedIn ? MobileHome() : THJLogin(),
+      home: sessionManager.isSignedIn ? const MobileHome() : const THJLogin(),
     );
   }
 }

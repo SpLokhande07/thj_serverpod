@@ -3,10 +3,10 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:serverpod_auth_google_flutter/serverpod_auth_google_flutter.dart';
-import 'package:thj_flutter/global.dart';
-import 'package:thj_flutter/home_directory/home_page.dart';
-import 'package:thj_flutter/main.dart';
-import 'package:thj_flutter/responsiveWidget/responsive_layout.dart';
+import 'package:thj_admin/global.dart';
+import 'package:thj_admin/home_directory/home_page.dart';
+import 'package:thj_admin/main.dart';
+import 'package:thj_admin/responsiveWidget/responsive_layout.dart';
 
 class THJLogin extends StatefulWidget {
   const THJLogin({Key? key}) : super(key: key);
