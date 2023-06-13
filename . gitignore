@@ -1,0 +1,40 @@
+# thj_admin
+# files and directories created by pub
+thj_admin/.dart_tool/
+thj_admin/.packages
+thj_admin/.pub/
+thj_admin/build/
+thj_admin/pubspec.lock  # Except for application packages
+# API documentation directory created by dartdoc
+thj_admin/doc/api/
+# files and directories created by other development environments
+thj_admin/*.iml         # IntelliJ
+thj_admin/*.ipr         # IntelliJ
+thj_admin/*.iws         # IntelliJ
+thj_admin/.idea/        # IntelliJ
+thj_admin/.DS_Store     # Mac
+# generated JavaScript files
+thj_admin/*.dart.js
+thj_admin/*.info.json      # Produced by the --dump-info flag.
+thj_admin/*.js             
+
+# thj_flutter
+# files and directories created by pub
+thj_flutter/.dart_tool/
+thj_flutter/.packages
+thj_flutter/.pub/
+thj_flutter/build/
+thj_flutter/pubspec.lock  # Except for application packages
+# API documentation directory created by dartdoc
+thj_flutter/doc/api/
+# files and directories created by other development environments
+thj_flutter/*.iml         # IntelliJ
+thj_flutter/*.ipr         # IntelliJ
+thj_flutter/*.iws         # IntelliJ
+thj_flutter/.idea/        # IntelliJ
+thj_flutter/.DS_Store     # Mac
+# generated JavaScript files
+thj_flutter/*.dart.js
+thj_flutter/*.info.json      # Produced by the --dump-info flag.
+thj_flutter/*.js             
+
