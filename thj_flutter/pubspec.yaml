@@ -27,10 +27,12 @@ dependencies:
 
   serverpod_flutter: ^1.1.1
   # SERVERPOD AUTH Packages
+#  google_sign_in:
   serverpod_auth_server: ^1.1.1
   serverpod_auth_email_flutter: ^1.1.1
   serverpod_auth_shared_flutter: ^1.1.1
   serverpod_auth_google_flutter: ^1.1.1
+#  serverpod_auth_firebase_flutter: ^1.1.1
   #STATE MANAGEMENT Package
   flutter_riverpod:
   thj_client:

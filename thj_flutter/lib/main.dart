@@ -2,20 +2,28 @@ import 'package:flutter/material.dart';
 import 'package:serverpod_auth_google_flutter/serverpod_auth_google_flutter.dart';
 import 'package:serverpod_flutter/serverpod_flutter.dart';
 import 'package:thj_client/thj_client.dart';
-import 'package:thj_flutter/home_directory/home_page.dart';
+import 'package:thj_flutter/auth/login.dart';
+import 'package:thj_flutter/home_directory/home_mobile.dart';
 
 // Sets up a singleton client object that can be used to talk to the server from
 // anywhere in our app. The client is generated from your server code.
 // The client is set up to connect to a Serverpod running on a local server on
 // the default port. You will need to modify this to connect to staging or
 // production servers.
-var client = Client(
-  // Use a local address for android, for example:
-  'https://f2a0-103-179-3-214.ngrok-free.app/',
-  authenticationKeyManager: FlutterAuthenticationKeyManager(),
-)..connectivityMonitor = FlutterConnectivityMonitor();
+late SessionManager sessionManager;
+late Client client;
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  client = Client(
+    // Use a local address for android, for example:
+    'https://b399-103-179-3-214.ngrok-free.app/',
+    authenticationKeyManager: FlutterAuthenticationKeyManager(),
+  )..connectivityMonitor = FlutterConnectivityMonitor();
+  sessionManager = SessionManager(
+    caller: client.modules.auth,
+  );
+  await sessionManager.initialize();
   runApp(const MyApp());
 }
 
@@ -29,7 +37,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HomePage(),
+      home: sessionManager.isSignedIn ? MobileHome() : THJLogin(),
     );
   }
 }
