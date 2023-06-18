@@ -14,7 +14,12 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return ResponsiveLayout(
-      mobile: MobileHome(),
+      extraSmall: (context, child) {
+        return const MobileHome();
+      },
+      small: (context, child) {
+        return const MobileHome();
+      },
     );
   }
 }

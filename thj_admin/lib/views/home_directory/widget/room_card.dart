@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:thj_admin/home_directory/actions.dart';
 
-import '../../util/widget.dart';
+import '../../common_widgets/room_card_tile.dart';
 
 class RoomCard extends StatelessWidget {
   RoomCard({Key? key}) : super(key: key);
