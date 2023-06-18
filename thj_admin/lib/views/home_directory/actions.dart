@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:thj_admin/util/background.dart';
 import 'package:thj_admin/util/essentials.dart';
 
-import '../constants.dart';
+import '../../constants.dart';
 
 class RoomActions extends StatefulWidget {
   const RoomActions({Key? key}) : super(key: key);

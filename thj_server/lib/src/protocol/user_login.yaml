@@ -1,0 +1,3 @@
+class: UserLogin
+fields:
+  userInfo: module:auth:UserInfo

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
-import '../responsiveWidget/responsive_layout.dart';
-import 'home_mobile.dart';
+import 'package:thj_admin/responsiveWidget/responsive_layout.dart';
+import 'package:thj_admin/views/home_directory/home_mobile.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:thj_admin/home_directory/widget/admin_analysis_card.dart';
 import 'package:thj_admin/util/essentials.dart';
+import 'package:thj_admin/views/home_directory/widget/admin_analysis_card.dart';
 
 class HomeTitleWidget extends StatelessWidget {
   const HomeTitleWidget({Key? key}) : super(key: key);

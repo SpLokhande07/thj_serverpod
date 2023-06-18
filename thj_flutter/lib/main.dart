@@ -16,7 +16,7 @@ late Client client;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   client = Client(
-    'https://bad4-103-179-3-214.ngrok-free.app/',
+    'https://f66d-103-179-3-215.ngrok-free.app/',
     authenticationKeyManager: FlutterAuthenticationKeyManager(),
   )..connectivityMonitor = FlutterConnectivityMonitor();
   sessionManager = SessionManager(

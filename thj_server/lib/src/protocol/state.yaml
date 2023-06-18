@@ -1,0 +1,5 @@
+class: State
+table: state
+fields:
+  countryId: int
+  state: String

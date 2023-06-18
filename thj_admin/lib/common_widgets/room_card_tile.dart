@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:thj_admin/util/background.dart';
 
 import '../constants.dart';
-import 'essentials.dart';
+import '../util/essentials.dart';
 
 class RoomCardTitle extends StatelessWidget {
   RoomCardTitle({Key? key}) : super(key: key);

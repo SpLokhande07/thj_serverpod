@@ -1,0 +1,8 @@
+class: Country
+table: country
+fields:
+  areaId: int
+  cityId: int
+  districtId: int
+  stateId: int
+  country: String

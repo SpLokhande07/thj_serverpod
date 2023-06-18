@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:thj_admin/common_widgets/custom_round_icon.dart';
 import 'package:thj_admin/constants.dart';
-import 'package:thj_admin/home_directory/widget/admin_analysis_card.dart';
 import 'package:thj_admin/util/essentials.dart';
+import 'package:thj_admin/views/home_directory/widget/admin_analysis_card.dart';
 
 class MobileHome extends StatefulWidget {
   const MobileHome({Key? key}) : super(key: key);

@@ -12,7 +12,7 @@ RUNMODE="production"
 
 # Check that we are running the script from the correct directory.
 if [ ! -f config/production.yaml ]; then
-    echo "Run this script from the root of your server directory (e.g., mypod/mypod_server)."
+    echo "Run this script from the root of your server directory (e.g., mypod/thj_server)."
     exit 1
 fi
 
