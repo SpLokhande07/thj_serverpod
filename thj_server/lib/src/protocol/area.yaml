@@ -1,5 +1,6 @@
 class: Area
 table: area
 fields:
+  areaId: UuidValue
   area: String
-  cityId: int
+  cityId: String

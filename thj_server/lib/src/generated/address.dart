@@ -11,6 +11,7 @@ import 'package:serverpod/serverpod.dart' as _i1;
 class Address extends _i1.TableRow {
   Address({
     int? id,
+    required this.addressId,
     required this.areaId,
     required this.wardId,
     required this.cityId,
@@ -29,19 +30,22 @@ class Address extends _i1.TableRow {
   ) {
     return Address(
       id: serializationManager.deserialize<int?>(jsonSerialization['id']),
-      areaId:
-          serializationManager.deserialize<int>(jsonSerialization['areaId']),
-      wardId:
-          serializationManager.deserialize<int>(jsonSerialization['wardId']),
-      cityId:
-          serializationManager.deserialize<int>(jsonSerialization['cityId']),
-      mcId: serializationManager.deserialize<int>(jsonSerialization['mcId']),
+      addressId: serializationManager
+          .deserialize<_i1.UuidValue>(jsonSerialization['addressId']),
+      areaId: serializationManager
+          .deserialize<_i1.UuidValue>(jsonSerialization['areaId']),
+      wardId: serializationManager
+          .deserialize<_i1.UuidValue>(jsonSerialization['wardId']),
+      cityId: serializationManager
+          .deserialize<_i1.UuidValue>(jsonSerialization['cityId']),
+      mcId: serializationManager
+          .deserialize<_i1.UuidValue>(jsonSerialization['mcId']),
       districtId: serializationManager
-          .deserialize<int>(jsonSerialization['districtId']),
-      stateId:
-          serializationManager.deserialize<int>(jsonSerialization['stateId']),
-      countryId:
-          serializationManager.deserialize<int>(jsonSerialization['countryId']),
+          .deserialize<_i1.UuidValue>(jsonSerialization['districtId']),
+      stateId: serializationManager
+          .deserialize<_i1.UuidValue>(jsonSerialization['stateId']),
+      countryId: serializationManager
+          .deserialize<_i1.UuidValue>(jsonSerialization['countryId']),
       fullAddress: serializationManager
           .deserialize<String>(jsonSerialization['fullAddress']),
       landmark: serializationManager
@@ -53,19 +57,21 @@ class Address extends _i1.TableRow {
 
   static final t = AddressTable();
 
-  int areaId;
+  _i1.UuidValue addressId;
 
-  int wardId;
+  _i1.UuidValue areaId;
 
-  int cityId;
+  _i1.UuidValue wardId;
 
-  int mcId;
+  _i1.UuidValue cityId;
 
-  int districtId;
+  _i1.UuidValue mcId;
 
-  int stateId;
+  _i1.UuidValue districtId;
 
-  int countryId;
+  _i1.UuidValue stateId;
+
+  _i1.UuidValue countryId;
 
   String fullAddress;
 
@@ -79,6 +85,7 @@ class Address extends _i1.TableRow {
   Map<String, dynamic> toJson() {
     return {
       'id': id,
+      'addressId': addressId,
       'areaId': areaId,
       'wardId': wardId,
       'cityId': cityId,
@@ -96,6 +103,7 @@ class Address extends _i1.TableRow {
   Map<String, dynamic> toJsonForDatabase() {
     return {
       'id': id,
+      'addressId': addressId,
       'areaId': areaId,
       'wardId': wardId,
       'cityId': cityId,
@@ -113,6 +121,7 @@ class Address extends _i1.TableRow {
   Map<String, dynamic> allToJson() {
     return {
       'id': id,
+      'addressId': addressId,
       'areaId': areaId,
       'wardId': wardId,
       'cityId': cityId,
@@ -134,6 +143,9 @@ class Address extends _i1.TableRow {
     switch (columnName) {
       case 'id':
         id = value;
+        return;
+      case 'addressId':
+        addressId = value;
         return;
       case 'areaId':
         areaId = value;
@@ -289,19 +301,21 @@ class AddressTable extends _i1.Table {
   /// the id will be null.
   final id = _i1.ColumnInt('id');
 
-  final areaId = _i1.ColumnInt('areaId');
+  final addressId = _i1.ColumnUuid('addressId');
 
-  final wardId = _i1.ColumnInt('wardId');
+  final areaId = _i1.ColumnUuid('areaId');
 
-  final cityId = _i1.ColumnInt('cityId');
+  final wardId = _i1.ColumnUuid('wardId');
 
-  final mcId = _i1.ColumnInt('mcId');
+  final cityId = _i1.ColumnUuid('cityId');
 
-  final districtId = _i1.ColumnInt('districtId');
+  final mcId = _i1.ColumnUuid('mcId');
 
-  final stateId = _i1.ColumnInt('stateId');
+  final districtId = _i1.ColumnUuid('districtId');
 
-  final countryId = _i1.ColumnInt('countryId');
+  final stateId = _i1.ColumnUuid('stateId');
+
+  final countryId = _i1.ColumnUuid('countryId');
 
   final fullAddress = _i1.ColumnString('fullAddress');
 
@@ -312,6 +326,7 @@ class AddressTable extends _i1.Table {
   @override
   List<_i1.Column> get columns => [
         id,
+        addressId,
         areaId,
         wardId,
         cityId,

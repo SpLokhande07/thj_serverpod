@@ -13,6 +13,7 @@ class City extends _i1.SerializableEntity {
     this.id,
     required this.districtId,
     required this.city,
+    required this.cityId,
   });
 
   factory City.fromJson(
@@ -22,8 +23,10 @@ class City extends _i1.SerializableEntity {
     return City(
       id: serializationManager.deserialize<int?>(jsonSerialization['id']),
       districtId: serializationManager
-          .deserialize<int>(jsonSerialization['districtId']),
+          .deserialize<_i1.UuidValue>(jsonSerialization['districtId']),
       city: serializationManager.deserialize<String>(jsonSerialization['city']),
+      cityId: serializationManager
+          .deserialize<_i1.UuidValue>(jsonSerialization['cityId']),
     );
   }
 
@@ -32,9 +35,11 @@ class City extends _i1.SerializableEntity {
   /// the id will be null.
   int? id;
 
-  int districtId;
+  _i1.UuidValue districtId;
 
   String city;
+
+  _i1.UuidValue cityId;
 
   @override
   Map<String, dynamic> toJson() {
@@ -42,6 +47,7 @@ class City extends _i1.SerializableEntity {
       'id': id,
       'districtId': districtId,
       'city': city,
+      'cityId': cityId,
     };
   }
 }

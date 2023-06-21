@@ -12,6 +12,7 @@ class Rooms extends _i1.SerializableEntity {
   Rooms({
     this.id,
     required this.socId,
+    required this.roomId,
     required this.roomNo,
     required this.owner,
     required this.onRent,
@@ -33,7 +34,10 @@ class Rooms extends _i1.SerializableEntity {
   ) {
     return Rooms(
       id: serializationManager.deserialize<int?>(jsonSerialization['id']),
-      socId: serializationManager.deserialize<int>(jsonSerialization['socId']),
+      socId: serializationManager
+          .deserialize<_i1.UuidValue>(jsonSerialization['socId']),
+      roomId: serializationManager
+          .deserialize<_i1.UuidValue>(jsonSerialization['roomId']),
       roomNo:
           serializationManager.deserialize<int>(jsonSerialization['roomNo']),
       owner:
@@ -68,7 +72,9 @@ class Rooms extends _i1.SerializableEntity {
   /// the id will be null.
   int? id;
 
-  int socId;
+  _i1.UuidValue socId;
+
+  _i1.UuidValue roomId;
 
   int roomNo;
 
@@ -101,6 +107,7 @@ class Rooms extends _i1.SerializableEntity {
     return {
       'id': id,
       'socId': socId,
+      'roomId': roomId,
       'roomNo': roomNo,
       'owner': owner,
       'onRent': onRent,

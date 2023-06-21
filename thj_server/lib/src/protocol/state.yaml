@@ -1,5 +1,6 @@
 class: State
 table: state
 fields:
-  countryId: int
+  countryId: UuidValue
   state: String
+  stateId: UuidValue

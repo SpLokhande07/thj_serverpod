@@ -27,11 +27,12 @@ class UserRoom extends _i1.TableRow {
   ) {
     return UserRoom(
       id: serializationManager.deserialize<int?>(jsonSerialization['id']),
-      socId: serializationManager.deserialize<int>(jsonSerialization['socId']),
-      userId:
-          serializationManager.deserialize<int>(jsonSerialization['userId']),
-      roomId:
-          serializationManager.deserialize<int>(jsonSerialization['roomId']),
+      socId: serializationManager
+          .deserialize<_i1.UuidValue>(jsonSerialization['socId']),
+      userId: serializationManager
+          .deserialize<_i1.UuidValue>(jsonSerialization['userId']),
+      roomId: serializationManager
+          .deserialize<_i1.UuidValue>(jsonSerialization['roomId']),
       fromDate: serializationManager
           .deserialize<DateTime>(jsonSerialization['fromDate']),
       toDate: serializationManager
@@ -47,11 +48,11 @@ class UserRoom extends _i1.TableRow {
 
   static final t = UserRoomTable();
 
-  int socId;
+  _i1.UuidValue socId;
 
-  int userId;
+  _i1.UuidValue userId;
 
-  int roomId;
+  _i1.UuidValue roomId;
 
   DateTime fromDate;
 
@@ -267,11 +268,11 @@ class UserRoomTable extends _i1.Table {
   /// the id will be null.
   final id = _i1.ColumnInt('id');
 
-  final socId = _i1.ColumnInt('socId');
+  final socId = _i1.ColumnUuid('socId');
 
-  final userId = _i1.ColumnInt('userId');
+  final userId = _i1.ColumnUuid('userId');
 
-  final roomId = _i1.ColumnInt('roomId');
+  final roomId = _i1.ColumnUuid('roomId');
 
   final fromDate = _i1.ColumnDateTime('fromDate');
 

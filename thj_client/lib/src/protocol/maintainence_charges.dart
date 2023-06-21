@@ -29,6 +29,7 @@ class MaintainenceCharges extends _i1.SerializableEntity {
     required this.penalty,
     required this.dueDate,
     required this.isActive,
+    required this.maintainence_charges_id,
   });
 
   factory MaintainenceCharges.fromJson(
@@ -37,7 +38,8 @@ class MaintainenceCharges extends _i1.SerializableEntity {
   ) {
     return MaintainenceCharges(
       id: serializationManager.deserialize<int?>(jsonSerialization['id']),
-      socId: serializationManager.deserialize<int>(jsonSerialization['socId']),
+      socId: serializationManager
+          .deserialize<_i1.UuidValue>(jsonSerialization['socId']),
       fromDate: serializationManager
           .deserialize<DateTime>(jsonSerialization['fromDate']),
       toDate: serializationManager
@@ -70,6 +72,8 @@ class MaintainenceCharges extends _i1.SerializableEntity {
           serializationManager.deserialize<int>(jsonSerialization['dueDate']),
       isActive:
           serializationManager.deserialize<bool>(jsonSerialization['isActive']),
+      maintainence_charges_id: serializationManager
+          .deserialize<String>(jsonSerialization['maintainence_charges_id']),
     );
   }
 
@@ -78,7 +82,7 @@ class MaintainenceCharges extends _i1.SerializableEntity {
   /// the id will be null.
   int? id;
 
-  int socId;
+  _i1.UuidValue socId;
 
   DateTime fromDate;
 
@@ -114,6 +118,8 @@ class MaintainenceCharges extends _i1.SerializableEntity {
 
   bool isActive;
 
+  String maintainence_charges_id;
+
   @override
   Map<String, dynamic> toJson() {
     return {
@@ -136,6 +142,7 @@ class MaintainenceCharges extends _i1.SerializableEntity {
       'penalty': penalty,
       'dueDate': dueDate,
       'isActive': isActive,
+      'maintainence_charges_id': maintainence_charges_id,
     };
   }
 }

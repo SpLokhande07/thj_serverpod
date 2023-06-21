@@ -13,6 +13,7 @@ class State extends _i1.SerializableEntity {
     this.id,
     required this.countryId,
     required this.state,
+    required this.stateId,
   });
 
   factory State.fromJson(
@@ -21,10 +22,12 @@ class State extends _i1.SerializableEntity {
   ) {
     return State(
       id: serializationManager.deserialize<int?>(jsonSerialization['id']),
-      countryId:
-          serializationManager.deserialize<int>(jsonSerialization['countryId']),
+      countryId: serializationManager
+          .deserialize<_i1.UuidValue>(jsonSerialization['countryId']),
       state:
           serializationManager.deserialize<String>(jsonSerialization['state']),
+      stateId: serializationManager
+          .deserialize<_i1.UuidValue>(jsonSerialization['stateId']),
     );
   }
 
@@ -33,9 +36,11 @@ class State extends _i1.SerializableEntity {
   /// the id will be null.
   int? id;
 
-  int countryId;
+  _i1.UuidValue countryId;
 
   String state;
+
+  _i1.UuidValue stateId;
 
   @override
   Map<String, dynamic> toJson() {
@@ -43,6 +48,7 @@ class State extends _i1.SerializableEntity {
       'id': id,
       'countryId': countryId,
       'state': state,
+      'stateId': stateId,
     };
   }
 }

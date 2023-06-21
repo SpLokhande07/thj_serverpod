@@ -29,6 +29,7 @@ class MaintainenceCharges extends _i1.TableRow {
     required this.penalty,
     required this.dueDate,
     required this.isActive,
+    required this.maintainence_charges_id,
   }) : super(id);
 
   factory MaintainenceCharges.fromJson(
@@ -37,7 +38,8 @@ class MaintainenceCharges extends _i1.TableRow {
   ) {
     return MaintainenceCharges(
       id: serializationManager.deserialize<int?>(jsonSerialization['id']),
-      socId: serializationManager.deserialize<int>(jsonSerialization['socId']),
+      socId: serializationManager
+          .deserialize<_i1.UuidValue>(jsonSerialization['socId']),
       fromDate: serializationManager
           .deserialize<DateTime>(jsonSerialization['fromDate']),
       toDate: serializationManager
@@ -70,12 +72,14 @@ class MaintainenceCharges extends _i1.TableRow {
           serializationManager.deserialize<int>(jsonSerialization['dueDate']),
       isActive:
           serializationManager.deserialize<bool>(jsonSerialization['isActive']),
+      maintainence_charges_id: serializationManager
+          .deserialize<String>(jsonSerialization['maintainence_charges_id']),
     );
   }
 
   static final t = MaintainenceChargesTable();
 
-  int socId;
+  _i1.UuidValue socId;
 
   DateTime fromDate;
 
@@ -111,6 +115,8 @@ class MaintainenceCharges extends _i1.TableRow {
 
   bool isActive;
 
+  String maintainence_charges_id;
+
   @override
   String get tableName => 'maintainence_charges';
   @override
@@ -135,6 +141,7 @@ class MaintainenceCharges extends _i1.TableRow {
       'penalty': penalty,
       'dueDate': dueDate,
       'isActive': isActive,
+      'maintainence_charges_id': maintainence_charges_id,
     };
   }
 
@@ -160,6 +167,7 @@ class MaintainenceCharges extends _i1.TableRow {
       'penalty': penalty,
       'dueDate': dueDate,
       'isActive': isActive,
+      'maintainence_charges_id': maintainence_charges_id,
     };
   }
 
@@ -185,6 +193,7 @@ class MaintainenceCharges extends _i1.TableRow {
       'penalty': penalty,
       'dueDate': dueDate,
       'isActive': isActive,
+      'maintainence_charges_id': maintainence_charges_id,
     };
   }
 
@@ -250,6 +259,9 @@ class MaintainenceCharges extends _i1.TableRow {
         return;
       case 'isActive':
         isActive = value;
+        return;
+      case 'maintainence_charges_id':
+        maintainence_charges_id = value;
         return;
       default:
         throw UnimplementedError();
@@ -376,7 +388,7 @@ class MaintainenceChargesTable extends _i1.Table {
   /// the id will be null.
   final id = _i1.ColumnInt('id');
 
-  final socId = _i1.ColumnInt('socId');
+  final socId = _i1.ColumnUuid('socId');
 
   final fromDate = _i1.ColumnDateTime('fromDate');
 
@@ -412,6 +424,8 @@ class MaintainenceChargesTable extends _i1.Table {
 
   final isActive = _i1.ColumnBool('isActive');
 
+  final maintainence_charges_id = _i1.ColumnString('maintainence_charges_id');
+
   @override
   List<_i1.Column> get columns => [
         id,
@@ -433,6 +447,7 @@ class MaintainenceChargesTable extends _i1.Table {
         penalty,
         dueDate,
         isActive,
+        maintainence_charges_id,
       ];
 }
 

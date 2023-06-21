@@ -11,6 +11,7 @@ import 'package:serverpod/serverpod.dart' as _i1;
 class Members extends _i1.TableRow {
   Members({
     int? id,
+    required this.memberId,
     required this.name,
     required this.age,
     required this.mobile,
@@ -30,6 +31,8 @@ class Members extends _i1.TableRow {
   ) {
     return Members(
       id: serializationManager.deserialize<int?>(jsonSerialization['id']),
+      memberId: serializationManager
+          .deserialize<_i1.UuidValue>(jsonSerialization['memberId']),
       name: serializationManager.deserialize<String>(jsonSerialization['name']),
       age: serializationManager.deserialize<int>(jsonSerialization['age']),
       mobile:
@@ -53,6 +56,8 @@ class Members extends _i1.TableRow {
   }
 
   static final t = MembersTable();
+
+  _i1.UuidValue memberId;
 
   String name;
 
@@ -82,6 +87,7 @@ class Members extends _i1.TableRow {
   Map<String, dynamic> toJson() {
     return {
       'id': id,
+      'memberId': memberId,
       'name': name,
       'age': age,
       'mobile': mobile,
@@ -100,6 +106,7 @@ class Members extends _i1.TableRow {
   Map<String, dynamic> toJsonForDatabase() {
     return {
       'id': id,
+      'memberId': memberId,
       'name': name,
       'age': age,
       'mobile': mobile,
@@ -118,6 +125,7 @@ class Members extends _i1.TableRow {
   Map<String, dynamic> allToJson() {
     return {
       'id': id,
+      'memberId': memberId,
       'name': name,
       'age': age,
       'mobile': mobile,
@@ -140,6 +148,9 @@ class Members extends _i1.TableRow {
     switch (columnName) {
       case 'id':
         id = value;
+        return;
+      case 'memberId':
+        memberId = value;
         return;
       case 'name':
         name = value;
@@ -298,6 +309,8 @@ class MembersTable extends _i1.Table {
   /// the id will be null.
   final id = _i1.ColumnInt('id');
 
+  final memberId = _i1.ColumnUuid('memberId');
+
   final name = _i1.ColumnString('name');
 
   final age = _i1.ColumnInt('age');
@@ -323,6 +336,7 @@ class MembersTable extends _i1.Table {
   @override
   List<_i1.Column> get columns => [
         id,
+        memberId,
         name,
         age,
         mobile,

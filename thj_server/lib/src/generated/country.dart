@@ -16,6 +16,7 @@ class Country extends _i1.TableRow {
     required this.districtId,
     required this.stateId,
     required this.country,
+    required this.countryId,
   }) : super(id);
 
   factory Country.fromJson(
@@ -24,30 +25,34 @@ class Country extends _i1.TableRow {
   ) {
     return Country(
       id: serializationManager.deserialize<int?>(jsonSerialization['id']),
-      areaId:
-          serializationManager.deserialize<int>(jsonSerialization['areaId']),
-      cityId:
-          serializationManager.deserialize<int>(jsonSerialization['cityId']),
+      areaId: serializationManager
+          .deserialize<_i1.UuidValue>(jsonSerialization['areaId']),
+      cityId: serializationManager
+          .deserialize<_i1.UuidValue>(jsonSerialization['cityId']),
       districtId: serializationManager
-          .deserialize<int>(jsonSerialization['districtId']),
-      stateId:
-          serializationManager.deserialize<int>(jsonSerialization['stateId']),
+          .deserialize<_i1.UuidValue>(jsonSerialization['districtId']),
+      stateId: serializationManager
+          .deserialize<_i1.UuidValue>(jsonSerialization['stateId']),
       country: serializationManager
           .deserialize<String>(jsonSerialization['country']),
+      countryId: serializationManager
+          .deserialize<_i1.UuidValue>(jsonSerialization['countryId']),
     );
   }
 
   static final t = CountryTable();
 
-  int areaId;
+  _i1.UuidValue areaId;
 
-  int cityId;
+  _i1.UuidValue cityId;
 
-  int districtId;
+  _i1.UuidValue districtId;
 
-  int stateId;
+  _i1.UuidValue stateId;
 
   String country;
+
+  _i1.UuidValue countryId;
 
   @override
   String get tableName => 'country';
@@ -60,6 +65,7 @@ class Country extends _i1.TableRow {
       'districtId': districtId,
       'stateId': stateId,
       'country': country,
+      'countryId': countryId,
     };
   }
 
@@ -72,6 +78,7 @@ class Country extends _i1.TableRow {
       'districtId': districtId,
       'stateId': stateId,
       'country': country,
+      'countryId': countryId,
     };
   }
 
@@ -84,6 +91,7 @@ class Country extends _i1.TableRow {
       'districtId': districtId,
       'stateId': stateId,
       'country': country,
+      'countryId': countryId,
     };
   }
 
@@ -110,6 +118,9 @@ class Country extends _i1.TableRow {
         return;
       case 'country':
         country = value;
+        return;
+      case 'countryId':
+        countryId = value;
         return;
       default:
         throw UnimplementedError();
@@ -235,15 +246,17 @@ class CountryTable extends _i1.Table {
   /// the id will be null.
   final id = _i1.ColumnInt('id');
 
-  final areaId = _i1.ColumnInt('areaId');
+  final areaId = _i1.ColumnUuid('areaId');
 
-  final cityId = _i1.ColumnInt('cityId');
+  final cityId = _i1.ColumnUuid('cityId');
 
-  final districtId = _i1.ColumnInt('districtId');
+  final districtId = _i1.ColumnUuid('districtId');
 
-  final stateId = _i1.ColumnInt('stateId');
+  final stateId = _i1.ColumnUuid('stateId');
 
   final country = _i1.ColumnString('country');
+
+  final countryId = _i1.ColumnUuid('countryId');
 
   @override
   List<_i1.Column> get columns => [
@@ -253,6 +266,7 @@ class CountryTable extends _i1.Table {
         districtId,
         stateId,
         country,
+        countryId,
       ];
 }
 

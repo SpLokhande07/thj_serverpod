@@ -30,9 +30,10 @@ class MaintenanceBook extends _i1.TableRow {
   ) {
     return MaintenanceBook(
       id: serializationManager.deserialize<int?>(jsonSerialization['id']),
-      socId: serializationManager.deserialize<int>(jsonSerialization['socId']),
-      receiptId:
-          serializationManager.deserialize<int>(jsonSerialization['receiptId']),
+      socId: serializationManager
+          .deserialize<_i1.UuidValue>(jsonSerialization['socId']),
+      receiptId: serializationManager
+          .deserialize<_i1.UuidValue>(jsonSerialization['receiptId']),
       roomNo:
           serializationManager.deserialize<int>(jsonSerialization['roomNo']),
       block:
@@ -55,9 +56,9 @@ class MaintenanceBook extends _i1.TableRow {
 
   static final t = MaintenanceBookTable();
 
-  int socId;
+  _i1.UuidValue socId;
 
-  int receiptId;
+  _i1.UuidValue receiptId;
 
   int roomNo;
 
@@ -300,9 +301,9 @@ class MaintenanceBookTable extends _i1.Table {
   /// the id will be null.
   final id = _i1.ColumnInt('id');
 
-  final socId = _i1.ColumnInt('socId');
+  final socId = _i1.ColumnUuid('socId');
 
-  final receiptId = _i1.ColumnInt('receiptId');
+  final receiptId = _i1.ColumnUuid('receiptId');
 
   final roomNo = _i1.ColumnInt('roomNo');
 

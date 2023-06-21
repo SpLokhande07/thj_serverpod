@@ -1,8 +1,8 @@
 class: MaintenanceBook
 table: maintenance_book
 fields:
-  socId: int
-  receiptId: int
+  socId: UuidValue
+  receiptId: UuidValue
   roomNo: int
   block: String
   year: int

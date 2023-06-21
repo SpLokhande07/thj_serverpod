@@ -2,8 +2,8 @@ class: Vehicles
 table: vehicles
 fields:
   vehicleNo: String
-  ownerId: int
-  roomId: int
-  vehicleType: int
+  ownerId: UuidValue
+  roomId: UuidValue
+  vehicleType: String
   entryDate: DateTime
   updatedDate: DateTime

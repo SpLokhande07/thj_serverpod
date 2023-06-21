@@ -16,6 +16,7 @@ class Country extends _i1.SerializableEntity {
     required this.districtId,
     required this.stateId,
     required this.country,
+    required this.countryId,
   });
 
   factory Country.fromJson(
@@ -24,16 +25,18 @@ class Country extends _i1.SerializableEntity {
   ) {
     return Country(
       id: serializationManager.deserialize<int?>(jsonSerialization['id']),
-      areaId:
-          serializationManager.deserialize<int>(jsonSerialization['areaId']),
-      cityId:
-          serializationManager.deserialize<int>(jsonSerialization['cityId']),
+      areaId: serializationManager
+          .deserialize<_i1.UuidValue>(jsonSerialization['areaId']),
+      cityId: serializationManager
+          .deserialize<_i1.UuidValue>(jsonSerialization['cityId']),
       districtId: serializationManager
-          .deserialize<int>(jsonSerialization['districtId']),
-      stateId:
-          serializationManager.deserialize<int>(jsonSerialization['stateId']),
+          .deserialize<_i1.UuidValue>(jsonSerialization['districtId']),
+      stateId: serializationManager
+          .deserialize<_i1.UuidValue>(jsonSerialization['stateId']),
       country: serializationManager
           .deserialize<String>(jsonSerialization['country']),
+      countryId: serializationManager
+          .deserialize<_i1.UuidValue>(jsonSerialization['countryId']),
     );
   }
 
@@ -42,15 +45,17 @@ class Country extends _i1.SerializableEntity {
   /// the id will be null.
   int? id;
 
-  int areaId;
+  _i1.UuidValue areaId;
 
-  int cityId;
+  _i1.UuidValue cityId;
 
-  int districtId;
+  _i1.UuidValue districtId;
 
-  int stateId;
+  _i1.UuidValue stateId;
 
   String country;
+
+  _i1.UuidValue countryId;
 
   @override
   Map<String, dynamic> toJson() {
@@ -61,6 +66,7 @@ class Country extends _i1.SerializableEntity {
       'districtId': districtId,
       'stateId': stateId,
       'country': country,
+      'countryId': countryId,
     };
   }
 }

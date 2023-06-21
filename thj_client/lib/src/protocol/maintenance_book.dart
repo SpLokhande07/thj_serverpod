@@ -30,9 +30,10 @@ class MaintenanceBook extends _i1.SerializableEntity {
   ) {
     return MaintenanceBook(
       id: serializationManager.deserialize<int?>(jsonSerialization['id']),
-      socId: serializationManager.deserialize<int>(jsonSerialization['socId']),
-      receiptId:
-          serializationManager.deserialize<int>(jsonSerialization['receiptId']),
+      socId: serializationManager
+          .deserialize<_i1.UuidValue>(jsonSerialization['socId']),
+      receiptId: serializationManager
+          .deserialize<_i1.UuidValue>(jsonSerialization['receiptId']),
       roomNo:
           serializationManager.deserialize<int>(jsonSerialization['roomNo']),
       block:
@@ -58,9 +59,9 @@ class MaintenanceBook extends _i1.SerializableEntity {
   /// the id will be null.
   int? id;
 
-  int socId;
+  _i1.UuidValue socId;
 
-  int receiptId;
+  _i1.UuidValue receiptId;
 
   int roomNo;
 

@@ -1,6 +1,7 @@
 class: Members
 table: members
 fields: 
+  memberId: UuidValue
   name: String
   age: int
   mobile: String

@@ -13,6 +13,7 @@ class District extends _i1.TableRow {
     int? id,
     required this.stateId,
     required this.district,
+    required this.districtId,
   }) : super(id);
 
   factory District.fromJson(
@@ -21,18 +22,22 @@ class District extends _i1.TableRow {
   ) {
     return District(
       id: serializationManager.deserialize<int?>(jsonSerialization['id']),
-      stateId:
-          serializationManager.deserialize<int>(jsonSerialization['stateId']),
+      stateId: serializationManager
+          .deserialize<_i1.UuidValue>(jsonSerialization['stateId']),
       district: serializationManager
           .deserialize<String>(jsonSerialization['district']),
+      districtId: serializationManager
+          .deserialize<_i1.UuidValue>(jsonSerialization['districtId']),
     );
   }
 
   static final t = DistrictTable();
 
-  int stateId;
+  _i1.UuidValue stateId;
 
   String district;
+
+  _i1.UuidValue districtId;
 
   @override
   String get tableName => 'district';
@@ -42,6 +47,7 @@ class District extends _i1.TableRow {
       'id': id,
       'stateId': stateId,
       'district': district,
+      'districtId': districtId,
     };
   }
 
@@ -51,6 +57,7 @@ class District extends _i1.TableRow {
       'id': id,
       'stateId': stateId,
       'district': district,
+      'districtId': districtId,
     };
   }
 
@@ -60,6 +67,7 @@ class District extends _i1.TableRow {
       'id': id,
       'stateId': stateId,
       'district': district,
+      'districtId': districtId,
     };
   }
 
@@ -77,6 +85,9 @@ class District extends _i1.TableRow {
         return;
       case 'district':
         district = value;
+        return;
+      case 'districtId':
+        districtId = value;
         return;
       default:
         throw UnimplementedError();
@@ -202,15 +213,18 @@ class DistrictTable extends _i1.Table {
   /// the id will be null.
   final id = _i1.ColumnInt('id');
 
-  final stateId = _i1.ColumnInt('stateId');
+  final stateId = _i1.ColumnUuid('stateId');
 
   final district = _i1.ColumnString('district');
+
+  final districtId = _i1.ColumnUuid('districtId');
 
   @override
   List<_i1.Column> get columns => [
         id,
         stateId,
         district,
+        districtId,
       ];
 }
 

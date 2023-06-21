@@ -4,13 +4,14 @@
 
 CREATE TABLE "address" (
   "id" serial,
-  "areaId" integer NOT NULL,
-  "wardId" integer NOT NULL,
-  "cityId" integer NOT NULL,
-  "mcId" integer NOT NULL,
-  "districtId" integer NOT NULL,
-  "stateId" integer NOT NULL,
-  "countryId" integer NOT NULL,
+  "addressId" uuid NOT NULL,
+  "areaId" uuid NOT NULL,
+  "wardId" uuid NOT NULL,
+  "cityId" uuid NOT NULL,
+  "mcId" uuid NOT NULL,
+  "districtId" uuid NOT NULL,
+  "stateId" uuid NOT NULL,
+  "countryId" uuid NOT NULL,
   "fullAddress" text NOT NULL,
   "landmark" text NOT NULL,
   "pincode" integer NOT NULL
@@ -26,8 +27,9 @@ ALTER TABLE ONLY "address"
 
 CREATE TABLE "area" (
   "id" serial,
+  "areaId" uuid NOT NULL,
   "area" text NOT NULL,
-  "cityId" integer NOT NULL
+  "cityId" text NOT NULL
 );
 
 ALTER TABLE ONLY "area"
@@ -40,8 +42,9 @@ ALTER TABLE ONLY "area"
 
 CREATE TABLE "city" (
   "id" serial,
-  "districtId" integer NOT NULL,
-  "city" text NOT NULL
+  "districtId" uuid NOT NULL,
+  "city" text NOT NULL,
+  "cityId" uuid NOT NULL
 );
 
 ALTER TABLE ONLY "city"
@@ -54,11 +57,12 @@ ALTER TABLE ONLY "city"
 
 CREATE TABLE "country" (
   "id" serial,
-  "areaId" integer NOT NULL,
-  "cityId" integer NOT NULL,
-  "districtId" integer NOT NULL,
-  "stateId" integer NOT NULL,
-  "country" text NOT NULL
+  "areaId" uuid NOT NULL,
+  "cityId" uuid NOT NULL,
+  "districtId" uuid NOT NULL,
+  "stateId" uuid NOT NULL,
+  "country" text NOT NULL,
+  "countryId" uuid NOT NULL
 );
 
 ALTER TABLE ONLY "country"
@@ -71,8 +75,9 @@ ALTER TABLE ONLY "country"
 
 CREATE TABLE "district" (
   "id" serial,
-  "stateId" integer NOT NULL,
-  "district" text NOT NULL
+  "stateId" uuid NOT NULL,
+  "district" text NOT NULL,
+  "districtId" uuid NOT NULL
 );
 
 ALTER TABLE ONLY "district"
@@ -85,7 +90,7 @@ ALTER TABLE ONLY "district"
 
 CREATE TABLE "maintainence_charges" (
   "id" serial,
-  "socId" integer NOT NULL,
+  "socId" uuid NOT NULL,
   "fromDate" timestamp without time zone NOT NULL,
   "toDate" timestamp without time zone NOT NULL,
   "oneBhk" integer NOT NULL,
@@ -102,7 +107,8 @@ CREATE TABLE "maintainence_charges" (
   "year" integer NOT NULL,
   "penalty" integer NOT NULL,
   "dueDate" integer NOT NULL,
-  "isActive" boolean NOT NULL
+  "isActive" boolean NOT NULL,
+  "maintainence_charges_id" text NOT NULL
 );
 
 ALTER TABLE ONLY "maintainence_charges"
@@ -115,8 +121,8 @@ ALTER TABLE ONLY "maintainence_charges"
 
 CREATE TABLE "maintenance_book" (
   "id" serial,
-  "socId" integer NOT NULL,
-  "receiptId" integer NOT NULL,
+  "socId" uuid NOT NULL,
+  "receiptId" uuid NOT NULL,
   "roomNo" integer NOT NULL,
   "block" text NOT NULL,
   "year" integer NOT NULL,
@@ -138,6 +144,7 @@ ALTER TABLE ONLY "maintenance_book"
 
 CREATE TABLE "members" (
   "id" serial,
+  "memberId" uuid NOT NULL,
   "name" text NOT NULL,
   "age" integer NOT NULL,
   "mobile" text NOT NULL,
@@ -161,7 +168,8 @@ ALTER TABLE ONLY "members"
 
 CREATE TABLE "rooms" (
   "id" serial,
-  "socId" integer NOT NULL,
+  "socId" uuid NOT NULL,
+  "roomId" uuid NOT NULL,
   "roomNo" integer NOT NULL,
   "owner" text NOT NULL,
   "onRent" boolean NOT NULL,
@@ -187,7 +195,7 @@ ALTER TABLE ONLY "rooms"
 
 CREATE TABLE "soc_amenities" (
   "id" serial,
-  "socId" integer NOT NULL,
+  "socId" uuid NOT NULL,
   "bikeParking" boolean NOT NULL,
   "carParking" boolean NOT NULL,
   "powerBackup" boolean NOT NULL,
@@ -213,15 +221,15 @@ ALTER TABLE ONLY "soc_amenities"
 
 CREATE TABLE "soc_body" (
   "id" serial,
-  "socId" integer NOT NULL,
-  "chairman" integer NOT NULL,
-  "secretary" integer NOT NULL,
-  "treasurer" integer NOT NULL,
-  "viceChairman" integer NOT NULL,
-  "viceSecretary" integer NOT NULL,
-  "viceTreasurer" integer NOT NULL,
+  "socId" uuid NOT NULL,
+  "chairman" text NOT NULL,
+  "secretary" text NOT NULL,
+  "treasurer" text NOT NULL,
+  "viceChairman" text NOT NULL,
+  "viceSecretary" text NOT NULL,
+  "viceTreasurer" text NOT NULL,
   "members" json NOT NULL,
-  "year" integer NOT NULL
+  "year" text NOT NULL
 );
 
 ALTER TABLE ONLY "soc_body"
@@ -235,8 +243,9 @@ ALTER TABLE ONLY "soc_body"
 CREATE TABLE "society" (
   "id" serial,
   "socName" text NOT NULL,
+  "socId" uuid NOT NULL,
   "socRegNo" text NOT NULL,
-  "socAddressId" integer NOT NULL,
+  "socAddressId" uuid NOT NULL,
   "totalRoom" integer NOT NULL,
   "totalBlock" integer NOT NULL,
   "totalShop" integer NOT NULL,
@@ -257,8 +266,9 @@ ALTER TABLE ONLY "society"
 
 CREATE TABLE "state" (
   "id" serial,
-  "countryId" integer NOT NULL,
-  "state" text NOT NULL
+  "countryId" uuid NOT NULL,
+  "state" text NOT NULL,
+  "stateId" uuid NOT NULL
 );
 
 ALTER TABLE ONLY "state"
@@ -271,9 +281,9 @@ ALTER TABLE ONLY "state"
 
 CREATE TABLE "user_room" (
   "id" serial,
-  "socId" integer NOT NULL,
-  "userId" integer NOT NULL,
-  "roomId" integer NOT NULL,
+  "socId" uuid NOT NULL,
+  "userId" uuid NOT NULL,
+  "roomId" uuid NOT NULL,
   "fromDate" timestamp without time zone NOT NULL,
   "toDate" timestamp without time zone NOT NULL,
   "ownership" boolean NOT NULL,
@@ -292,9 +302,9 @@ ALTER TABLE ONLY "user_room"
 CREATE TABLE "vehicles" (
   "id" serial,
   "vehicleNo" text NOT NULL,
-  "ownerId" integer NOT NULL,
-  "roomId" integer NOT NULL,
-  "vehicleType" integer NOT NULL,
+  "ownerId" uuid NOT NULL,
+  "roomId" uuid NOT NULL,
+  "vehicleType" text NOT NULL,
   "entryDate" timestamp without time zone NOT NULL,
   "updatedDate" timestamp without time zone NOT NULL
 );

@@ -13,6 +13,7 @@ class State extends _i1.TableRow {
     int? id,
     required this.countryId,
     required this.state,
+    required this.stateId,
   }) : super(id);
 
   factory State.fromJson(
@@ -21,18 +22,22 @@ class State extends _i1.TableRow {
   ) {
     return State(
       id: serializationManager.deserialize<int?>(jsonSerialization['id']),
-      countryId:
-          serializationManager.deserialize<int>(jsonSerialization['countryId']),
+      countryId: serializationManager
+          .deserialize<_i1.UuidValue>(jsonSerialization['countryId']),
       state:
           serializationManager.deserialize<String>(jsonSerialization['state']),
+      stateId: serializationManager
+          .deserialize<_i1.UuidValue>(jsonSerialization['stateId']),
     );
   }
 
   static final t = StateTable();
 
-  int countryId;
+  _i1.UuidValue countryId;
 
   String state;
+
+  _i1.UuidValue stateId;
 
   @override
   String get tableName => 'state';
@@ -42,6 +47,7 @@ class State extends _i1.TableRow {
       'id': id,
       'countryId': countryId,
       'state': state,
+      'stateId': stateId,
     };
   }
 
@@ -51,6 +57,7 @@ class State extends _i1.TableRow {
       'id': id,
       'countryId': countryId,
       'state': state,
+      'stateId': stateId,
     };
   }
 
@@ -60,6 +67,7 @@ class State extends _i1.TableRow {
       'id': id,
       'countryId': countryId,
       'state': state,
+      'stateId': stateId,
     };
   }
 
@@ -77,6 +85,9 @@ class State extends _i1.TableRow {
         return;
       case 'state':
         state = value;
+        return;
+      case 'stateId':
+        stateId = value;
         return;
       default:
         throw UnimplementedError();
@@ -202,15 +213,18 @@ class StateTable extends _i1.Table {
   /// the id will be null.
   final id = _i1.ColumnInt('id');
 
-  final countryId = _i1.ColumnInt('countryId');
+  final countryId = _i1.ColumnUuid('countryId');
 
   final state = _i1.ColumnString('state');
+
+  final stateId = _i1.ColumnUuid('stateId');
 
   @override
   List<_i1.Column> get columns => [
         id,
         countryId,
         state,
+        stateId,
       ];
 }
 

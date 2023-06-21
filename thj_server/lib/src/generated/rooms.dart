@@ -12,6 +12,7 @@ class Rooms extends _i1.TableRow {
   Rooms({
     int? id,
     required this.socId,
+    required this.roomId,
     required this.roomNo,
     required this.owner,
     required this.onRent,
@@ -33,7 +34,10 @@ class Rooms extends _i1.TableRow {
   ) {
     return Rooms(
       id: serializationManager.deserialize<int?>(jsonSerialization['id']),
-      socId: serializationManager.deserialize<int>(jsonSerialization['socId']),
+      socId: serializationManager
+          .deserialize<_i1.UuidValue>(jsonSerialization['socId']),
+      roomId: serializationManager
+          .deserialize<_i1.UuidValue>(jsonSerialization['roomId']),
       roomNo:
           serializationManager.deserialize<int>(jsonSerialization['roomNo']),
       owner:
@@ -65,7 +69,9 @@ class Rooms extends _i1.TableRow {
 
   static final t = RoomsTable();
 
-  int socId;
+  _i1.UuidValue socId;
+
+  _i1.UuidValue roomId;
 
   int roomNo;
 
@@ -100,6 +106,7 @@ class Rooms extends _i1.TableRow {
     return {
       'id': id,
       'socId': socId,
+      'roomId': roomId,
       'roomNo': roomNo,
       'owner': owner,
       'onRent': onRent,
@@ -121,6 +128,7 @@ class Rooms extends _i1.TableRow {
     return {
       'id': id,
       'socId': socId,
+      'roomId': roomId,
       'roomNo': roomNo,
       'owner': owner,
       'onRent': onRent,
@@ -142,6 +150,7 @@ class Rooms extends _i1.TableRow {
     return {
       'id': id,
       'socId': socId,
+      'roomId': roomId,
       'roomNo': roomNo,
       'owner': owner,
       'onRent': onRent,
@@ -169,6 +178,9 @@ class Rooms extends _i1.TableRow {
         return;
       case 'socId':
         socId = value;
+        return;
+      case 'roomId':
+        roomId = value;
         return;
       case 'roomNo':
         roomNo = value;
@@ -333,7 +345,9 @@ class RoomsTable extends _i1.Table {
   /// the id will be null.
   final id = _i1.ColumnInt('id');
 
-  final socId = _i1.ColumnInt('socId');
+  final socId = _i1.ColumnUuid('socId');
+
+  final roomId = _i1.ColumnUuid('roomId');
 
   final roomNo = _i1.ColumnInt('roomNo');
 
@@ -365,6 +379,7 @@ class RoomsTable extends _i1.Table {
   List<_i1.Column> get columns => [
         id,
         socId,
+        roomId,
         roomNo,
         owner,
         onRent,

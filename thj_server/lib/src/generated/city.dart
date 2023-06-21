@@ -13,6 +13,7 @@ class City extends _i1.TableRow {
     int? id,
     required this.districtId,
     required this.city,
+    required this.cityId,
   }) : super(id);
 
   factory City.fromJson(
@@ -22,16 +23,20 @@ class City extends _i1.TableRow {
     return City(
       id: serializationManager.deserialize<int?>(jsonSerialization['id']),
       districtId: serializationManager
-          .deserialize<int>(jsonSerialization['districtId']),
+          .deserialize<_i1.UuidValue>(jsonSerialization['districtId']),
       city: serializationManager.deserialize<String>(jsonSerialization['city']),
+      cityId: serializationManager
+          .deserialize<_i1.UuidValue>(jsonSerialization['cityId']),
     );
   }
 
   static final t = CityTable();
 
-  int districtId;
+  _i1.UuidValue districtId;
 
   String city;
+
+  _i1.UuidValue cityId;
 
   @override
   String get tableName => 'city';
@@ -41,6 +46,7 @@ class City extends _i1.TableRow {
       'id': id,
       'districtId': districtId,
       'city': city,
+      'cityId': cityId,
     };
   }
 
@@ -50,6 +56,7 @@ class City extends _i1.TableRow {
       'id': id,
       'districtId': districtId,
       'city': city,
+      'cityId': cityId,
     };
   }
 
@@ -59,6 +66,7 @@ class City extends _i1.TableRow {
       'id': id,
       'districtId': districtId,
       'city': city,
+      'cityId': cityId,
     };
   }
 
@@ -76,6 +84,9 @@ class City extends _i1.TableRow {
         return;
       case 'city':
         city = value;
+        return;
+      case 'cityId':
+        cityId = value;
         return;
       default:
         throw UnimplementedError();
@@ -201,15 +212,18 @@ class CityTable extends _i1.Table {
   /// the id will be null.
   final id = _i1.ColumnInt('id');
 
-  final districtId = _i1.ColumnInt('districtId');
+  final districtId = _i1.ColumnUuid('districtId');
 
   final city = _i1.ColumnString('city');
+
+  final cityId = _i1.ColumnUuid('cityId');
 
   @override
   List<_i1.Column> get columns => [
         id,
         districtId,
         city,
+        cityId,
       ];
 }
 

@@ -1,3 +1,7 @@
 import 'package:serverpod/serverpod.dart';
 
-class SocietyEndpoint extends Endpoint {}
+class SocietyEndpoint extends Endpoint {
+
+  
+
+}

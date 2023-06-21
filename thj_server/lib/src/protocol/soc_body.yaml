@@ -1,12 +1,12 @@
 class: SocBody
 table: soc_body
 fields:
-  socId: int
-  chairman: int
-  secretary: int
-  treasurer: int
-  viceChairman: int
-  viceSecretary: int
-  viceTreasurer: int
-  members: List<int>
-  year: int
+  socId: UuidValue
+  chairman: String
+  secretary: String
+  treasurer: String
+  viceChairman: String
+  viceSecretary: String
+  viceTreasurer: String
+  members: List<String>
+  year: String

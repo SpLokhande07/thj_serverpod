@@ -1,8 +1,9 @@
 class: Country
 table: country
 fields:
-  areaId: int
-  cityId: int
-  districtId: int
-  stateId: int
+  areaId: UuidValue
+  cityId: UuidValue
+  districtId: UuidValue
+  stateId: UuidValue
   country: String
+  countryId: UuidValue

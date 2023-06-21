@@ -27,12 +27,12 @@ class Vehicles extends _i1.TableRow {
       id: serializationManager.deserialize<int?>(jsonSerialization['id']),
       vehicleNo: serializationManager
           .deserialize<String>(jsonSerialization['vehicleNo']),
-      ownerId:
-          serializationManager.deserialize<int>(jsonSerialization['ownerId']),
-      roomId:
-          serializationManager.deserialize<int>(jsonSerialization['roomId']),
+      ownerId: serializationManager
+          .deserialize<_i1.UuidValue>(jsonSerialization['ownerId']),
+      roomId: serializationManager
+          .deserialize<_i1.UuidValue>(jsonSerialization['roomId']),
       vehicleType: serializationManager
-          .deserialize<int>(jsonSerialization['vehicleType']),
+          .deserialize<String>(jsonSerialization['vehicleType']),
       entryDate: serializationManager
           .deserialize<DateTime>(jsonSerialization['entryDate']),
       updatedDate: serializationManager
@@ -44,11 +44,11 @@ class Vehicles extends _i1.TableRow {
 
   String vehicleNo;
 
-  int ownerId;
+  _i1.UuidValue ownerId;
 
-  int roomId;
+  _i1.UuidValue roomId;
 
-  int vehicleType;
+  String vehicleType;
 
   DateTime entryDate;
 
@@ -248,11 +248,11 @@ class VehiclesTable extends _i1.Table {
 
   final vehicleNo = _i1.ColumnString('vehicleNo');
 
-  final ownerId = _i1.ColumnInt('ownerId');
+  final ownerId = _i1.ColumnUuid('ownerId');
 
-  final roomId = _i1.ColumnInt('roomId');
+  final roomId = _i1.ColumnUuid('roomId');
 
-  final vehicleType = _i1.ColumnInt('vehicleType');
+  final vehicleType = _i1.ColumnString('vehicleType');
 
   final entryDate = _i1.ColumnDateTime('entryDate');
 

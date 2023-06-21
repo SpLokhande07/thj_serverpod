@@ -27,11 +27,12 @@ class UserRoom extends _i1.SerializableEntity {
   ) {
     return UserRoom(
       id: serializationManager.deserialize<int?>(jsonSerialization['id']),
-      socId: serializationManager.deserialize<int>(jsonSerialization['socId']),
-      userId:
-          serializationManager.deserialize<int>(jsonSerialization['userId']),
-      roomId:
-          serializationManager.deserialize<int>(jsonSerialization['roomId']),
+      socId: serializationManager
+          .deserialize<_i1.UuidValue>(jsonSerialization['socId']),
+      userId: serializationManager
+          .deserialize<_i1.UuidValue>(jsonSerialization['userId']),
+      roomId: serializationManager
+          .deserialize<_i1.UuidValue>(jsonSerialization['roomId']),
       fromDate: serializationManager
           .deserialize<DateTime>(jsonSerialization['fromDate']),
       toDate: serializationManager
@@ -50,11 +51,11 @@ class UserRoom extends _i1.SerializableEntity {
   /// the id will be null.
   int? id;
 
-  int socId;
+  _i1.UuidValue socId;
 
-  int userId;
+  _i1.UuidValue userId;
 
-  int roomId;
+  _i1.UuidValue roomId;
 
   DateTime fromDate;
 

@@ -27,12 +27,12 @@ class Vehicles extends _i1.SerializableEntity {
       id: serializationManager.deserialize<int?>(jsonSerialization['id']),
       vehicleNo: serializationManager
           .deserialize<String>(jsonSerialization['vehicleNo']),
-      ownerId:
-          serializationManager.deserialize<int>(jsonSerialization['ownerId']),
-      roomId:
-          serializationManager.deserialize<int>(jsonSerialization['roomId']),
+      ownerId: serializationManager
+          .deserialize<_i1.UuidValue>(jsonSerialization['ownerId']),
+      roomId: serializationManager
+          .deserialize<_i1.UuidValue>(jsonSerialization['roomId']),
       vehicleType: serializationManager
-          .deserialize<int>(jsonSerialization['vehicleType']),
+          .deserialize<String>(jsonSerialization['vehicleType']),
       entryDate: serializationManager
           .deserialize<DateTime>(jsonSerialization['entryDate']),
       updatedDate: serializationManager
@@ -47,11 +47,11 @@ class Vehicles extends _i1.SerializableEntity {
 
   String vehicleNo;
 
-  int ownerId;
+  _i1.UuidValue ownerId;
 
-  int roomId;
+  _i1.UuidValue roomId;
 
-  int vehicleType;
+  String vehicleType;
 
   DateTime entryDate;
 

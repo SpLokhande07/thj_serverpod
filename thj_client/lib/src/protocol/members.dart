@@ -11,6 +11,7 @@ import 'package:serverpod_client/serverpod_client.dart' as _i1;
 class Members extends _i1.SerializableEntity {
   Members({
     this.id,
+    required this.memberId,
     required this.name,
     required this.age,
     required this.mobile,
@@ -30,6 +31,8 @@ class Members extends _i1.SerializableEntity {
   ) {
     return Members(
       id: serializationManager.deserialize<int?>(jsonSerialization['id']),
+      memberId: serializationManager
+          .deserialize<_i1.UuidValue>(jsonSerialization['memberId']),
       name: serializationManager.deserialize<String>(jsonSerialization['name']),
       age: serializationManager.deserialize<int>(jsonSerialization['age']),
       mobile:
@@ -57,6 +60,8 @@ class Members extends _i1.SerializableEntity {
   /// the id will be null.
   int? id;
 
+  _i1.UuidValue memberId;
+
   String name;
 
   int age;
@@ -83,6 +88,7 @@ class Members extends _i1.SerializableEntity {
   Map<String, dynamic> toJson() {
     return {
       'id': id,
+      'memberId': memberId,
       'name': name,
       'age': age,
       'mobile': mobile,

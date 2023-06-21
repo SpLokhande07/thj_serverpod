@@ -28,22 +28,23 @@ class SocBody extends _i1.SerializableEntity {
   ) {
     return SocBody(
       id: serializationManager.deserialize<int?>(jsonSerialization['id']),
-      socId: serializationManager.deserialize<int>(jsonSerialization['socId']),
-      chairman:
-          serializationManager.deserialize<int>(jsonSerialization['chairman']),
-      secretary:
-          serializationManager.deserialize<int>(jsonSerialization['secretary']),
-      treasurer:
-          serializationManager.deserialize<int>(jsonSerialization['treasurer']),
+      socId: serializationManager
+          .deserialize<_i1.UuidValue>(jsonSerialization['socId']),
+      chairman: serializationManager
+          .deserialize<String>(jsonSerialization['chairman']),
+      secretary: serializationManager
+          .deserialize<String>(jsonSerialization['secretary']),
+      treasurer: serializationManager
+          .deserialize<String>(jsonSerialization['treasurer']),
       viceChairman: serializationManager
-          .deserialize<int>(jsonSerialization['viceChairman']),
+          .deserialize<String>(jsonSerialization['viceChairman']),
       viceSecretary: serializationManager
-          .deserialize<int>(jsonSerialization['viceSecretary']),
+          .deserialize<String>(jsonSerialization['viceSecretary']),
       viceTreasurer: serializationManager
-          .deserialize<int>(jsonSerialization['viceTreasurer']),
+          .deserialize<String>(jsonSerialization['viceTreasurer']),
       members: serializationManager
-          .deserialize<List<int>>(jsonSerialization['members']),
-      year: serializationManager.deserialize<int>(jsonSerialization['year']),
+          .deserialize<List<String>>(jsonSerialization['members']),
+      year: serializationManager.deserialize<String>(jsonSerialization['year']),
     );
   }
 
@@ -52,23 +53,23 @@ class SocBody extends _i1.SerializableEntity {
   /// the id will be null.
   int? id;
 
-  int socId;
+  _i1.UuidValue socId;
 
-  int chairman;
+  String chairman;
 
-  int secretary;
+  String secretary;
 
-  int treasurer;
+  String treasurer;
 
-  int viceChairman;
+  String viceChairman;
 
-  int viceSecretary;
+  String viceSecretary;
 
-  int viceTreasurer;
+  String viceTreasurer;
 
-  List<int> members;
+  List<String> members;
 
-  int year;
+  String year;
 
   @override
   Map<String, dynamic> toJson() {

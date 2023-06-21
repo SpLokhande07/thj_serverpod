@@ -13,33 +13,29 @@ import 'area.dart' as _i3;
 import 'city.dart' as _i4;
 import 'country.dart' as _i5;
 import 'district.dart' as _i6;
-import 'example.dart' as _i7;
-import 'example_class.dart' as _i8;
-import 'maintainence_charges.dart' as _i9;
-import 'maintenance_book.dart' as _i10;
-import 'members.dart' as _i11;
-import 'rooms.dart' as _i12;
-import 'soc_body.dart' as _i13;
-import 'society.dart' as _i14;
-import 'society_amenities.dart' as _i15;
-import 'state.dart' as _i16;
-import 'user_login.dart' as _i17;
-import 'user_room.dart' as _i18;
-import 'vehicles.dart' as _i19;
-import 'package:thj_client/src/protocol/area.dart' as _i20;
-import 'package:thj_client/src/protocol/city.dart' as _i21;
-import 'package:thj_client/src/protocol/country.dart' as _i22;
-import 'package:thj_client/src/protocol/district.dart' as _i23;
-import 'package:thj_client/src/protocol/state.dart' as _i24;
-import 'package:thj_client/src/protocol/members.dart' as _i25;
-import 'package:serverpod_auth_client/module.dart' as _i26;
+import 'maintainence_charges.dart' as _i7;
+import 'maintenance_book.dart' as _i8;
+import 'members.dart' as _i9;
+import 'rooms.dart' as _i10;
+import 'soc_body.dart' as _i11;
+import 'society.dart' as _i12;
+import 'society_amenities.dart' as _i13;
+import 'state.dart' as _i14;
+import 'user_login.dart' as _i15;
+import 'user_room.dart' as _i16;
+import 'vehicles.dart' as _i17;
+import 'package:thj_client/src/protocol/area.dart' as _i18;
+import 'package:thj_client/src/protocol/city.dart' as _i19;
+import 'package:thj_client/src/protocol/country.dart' as _i20;
+import 'package:thj_client/src/protocol/district.dart' as _i21;
+import 'package:thj_client/src/protocol/state.dart' as _i22;
+import 'package:thj_client/src/protocol/members.dart' as _i23;
+import 'package:serverpod_auth_client/module.dart' as _i24;
 export 'address.dart';
 export 'area.dart';
 export 'city.dart';
 export 'country.dart';
 export 'district.dart';
-export 'example.dart';
-export 'example_class.dart';
 export 'maintainence_charges.dart';
 export 'maintenance_book.dart';
 export 'members.dart';
@@ -86,44 +82,38 @@ class Protocol extends _i1.SerializationManager {
     if (t == _i6.District) {
       return _i6.District.fromJson(data, this) as T;
     }
-    if (t == _i7.Example) {
-      return _i7.Example.fromJson(data, this) as T;
+    if (t == _i7.MaintainenceCharges) {
+      return _i7.MaintainenceCharges.fromJson(data, this) as T;
     }
-    if (t == _i8.Example) {
-      return _i8.Example.fromJson(data, this) as T;
+    if (t == _i8.MaintenanceBook) {
+      return _i8.MaintenanceBook.fromJson(data, this) as T;
     }
-    if (t == _i9.MaintainenceCharges) {
-      return _i9.MaintainenceCharges.fromJson(data, this) as T;
+    if (t == _i9.Members) {
+      return _i9.Members.fromJson(data, this) as T;
     }
-    if (t == _i10.MaintenanceBook) {
-      return _i10.MaintenanceBook.fromJson(data, this) as T;
+    if (t == _i10.Rooms) {
+      return _i10.Rooms.fromJson(data, this) as T;
     }
-    if (t == _i11.Members) {
-      return _i11.Members.fromJson(data, this) as T;
+    if (t == _i11.SocBody) {
+      return _i11.SocBody.fromJson(data, this) as T;
     }
-    if (t == _i12.Rooms) {
-      return _i12.Rooms.fromJson(data, this) as T;
+    if (t == _i12.Society) {
+      return _i12.Society.fromJson(data, this) as T;
     }
-    if (t == _i13.SocBody) {
-      return _i13.SocBody.fromJson(data, this) as T;
+    if (t == _i13.SocietyAmenities) {
+      return _i13.SocietyAmenities.fromJson(data, this) as T;
     }
-    if (t == _i14.Society) {
-      return _i14.Society.fromJson(data, this) as T;
+    if (t == _i14.State) {
+      return _i14.State.fromJson(data, this) as T;
     }
-    if (t == _i15.SocietyAmenities) {
-      return _i15.SocietyAmenities.fromJson(data, this) as T;
+    if (t == _i15.UserLogin) {
+      return _i15.UserLogin.fromJson(data, this) as T;
     }
-    if (t == _i16.State) {
-      return _i16.State.fromJson(data, this) as T;
+    if (t == _i16.UserRoom) {
+      return _i16.UserRoom.fromJson(data, this) as T;
     }
-    if (t == _i17.UserLogin) {
-      return _i17.UserLogin.fromJson(data, this) as T;
-    }
-    if (t == _i18.UserRoom) {
-      return _i18.UserRoom.fromJson(data, this) as T;
-    }
-    if (t == _i19.Vehicles) {
-      return _i19.Vehicles.fromJson(data, this) as T;
+    if (t == _i17.Vehicles) {
+      return _i17.Vehicles.fromJson(data, this) as T;
     }
     if (t == _i1.getType<_i2.Address?>()) {
       return (data != null ? _i2.Address.fromJson(data, this) : null) as T;
@@ -140,78 +130,76 @@ class Protocol extends _i1.SerializationManager {
     if (t == _i1.getType<_i6.District?>()) {
       return (data != null ? _i6.District.fromJson(data, this) : null) as T;
     }
-    if (t == _i1.getType<_i7.Example?>()) {
-      return (data != null ? _i7.Example.fromJson(data, this) : null) as T;
-    }
-    if (t == _i1.getType<_i8.Example?>()) {
-      return (data != null ? _i8.Example.fromJson(data, this) : null) as T;
-    }
-    if (t == _i1.getType<_i9.MaintainenceCharges?>()) {
+    if (t == _i1.getType<_i7.MaintainenceCharges?>()) {
       return (data != null
-          ? _i9.MaintainenceCharges.fromJson(data, this)
+          ? _i7.MaintainenceCharges.fromJson(data, this)
           : null) as T;
     }
-    if (t == _i1.getType<_i10.MaintenanceBook?>()) {
-      return (data != null ? _i10.MaintenanceBook.fromJson(data, this) : null)
+    if (t == _i1.getType<_i8.MaintenanceBook?>()) {
+      return (data != null ? _i8.MaintenanceBook.fromJson(data, this) : null)
           as T;
     }
-    if (t == _i1.getType<_i11.Members?>()) {
-      return (data != null ? _i11.Members.fromJson(data, this) : null) as T;
+    if (t == _i1.getType<_i9.Members?>()) {
+      return (data != null ? _i9.Members.fromJson(data, this) : null) as T;
     }
-    if (t == _i1.getType<_i12.Rooms?>()) {
-      return (data != null ? _i12.Rooms.fromJson(data, this) : null) as T;
+    if (t == _i1.getType<_i10.Rooms?>()) {
+      return (data != null ? _i10.Rooms.fromJson(data, this) : null) as T;
     }
-    if (t == _i1.getType<_i13.SocBody?>()) {
-      return (data != null ? _i13.SocBody.fromJson(data, this) : null) as T;
+    if (t == _i1.getType<_i11.SocBody?>()) {
+      return (data != null ? _i11.SocBody.fromJson(data, this) : null) as T;
     }
-    if (t == _i1.getType<_i14.Society?>()) {
-      return (data != null ? _i14.Society.fromJson(data, this) : null) as T;
+    if (t == _i1.getType<_i12.Society?>()) {
+      return (data != null ? _i12.Society.fromJson(data, this) : null) as T;
     }
-    if (t == _i1.getType<_i15.SocietyAmenities?>()) {
-      return (data != null ? _i15.SocietyAmenities.fromJson(data, this) : null)
+    if (t == _i1.getType<_i13.SocietyAmenities?>()) {
+      return (data != null ? _i13.SocietyAmenities.fromJson(data, this) : null)
           as T;
     }
-    if (t == _i1.getType<_i16.State?>()) {
-      return (data != null ? _i16.State.fromJson(data, this) : null) as T;
+    if (t == _i1.getType<_i14.State?>()) {
+      return (data != null ? _i14.State.fromJson(data, this) : null) as T;
     }
-    if (t == _i1.getType<_i17.UserLogin?>()) {
-      return (data != null ? _i17.UserLogin.fromJson(data, this) : null) as T;
+    if (t == _i1.getType<_i15.UserLogin?>()) {
+      return (data != null ? _i15.UserLogin.fromJson(data, this) : null) as T;
     }
-    if (t == _i1.getType<_i18.UserRoom?>()) {
-      return (data != null ? _i18.UserRoom.fromJson(data, this) : null) as T;
+    if (t == _i1.getType<_i16.UserRoom?>()) {
+      return (data != null ? _i16.UserRoom.fromJson(data, this) : null) as T;
     }
-    if (t == _i1.getType<_i19.Vehicles?>()) {
-      return (data != null ? _i19.Vehicles.fromJson(data, this) : null) as T;
+    if (t == _i1.getType<_i17.Vehicles?>()) {
+      return (data != null ? _i17.Vehicles.fromJson(data, this) : null) as T;
     }
     if (t == List<int>) {
       return (data as List).map((e) => deserialize<int>(e)).toList() as dynamic;
     }
-    if (t == List<_i20.Area>) {
-      return (data as List).map((e) => deserialize<_i20.Area>(e)).toList()
+    if (t == List<String>) {
+      return (data as List).map((e) => deserialize<String>(e)).toList()
           as dynamic;
     }
-    if (t == List<_i21.City>) {
-      return (data as List).map((e) => deserialize<_i21.City>(e)).toList()
+    if (t == List<_i18.Area>) {
+      return (data as List).map((e) => deserialize<_i18.Area>(e)).toList()
           as dynamic;
     }
-    if (t == List<_i22.Country>) {
-      return (data as List).map((e) => deserialize<_i22.Country>(e)).toList()
+    if (t == List<_i19.City>) {
+      return (data as List).map((e) => deserialize<_i19.City>(e)).toList()
           as dynamic;
     }
-    if (t == List<_i23.District>) {
-      return (data as List).map((e) => deserialize<_i23.District>(e)).toList()
+    if (t == List<_i20.Country>) {
+      return (data as List).map((e) => deserialize<_i20.Country>(e)).toList()
           as dynamic;
     }
-    if (t == List<_i24.State>) {
-      return (data as List).map((e) => deserialize<_i24.State>(e)).toList()
+    if (t == List<_i21.District>) {
+      return (data as List).map((e) => deserialize<_i21.District>(e)).toList()
           as dynamic;
     }
-    if (t == List<_i25.Members>) {
-      return (data as List).map((e) => deserialize<_i25.Members>(e)).toList()
+    if (t == List<_i22.State>) {
+      return (data as List).map((e) => deserialize<_i22.State>(e)).toList()
+          as dynamic;
+    }
+    if (t == List<_i23.Members>) {
+      return (data as List).map((e) => deserialize<_i23.Members>(e)).toList()
           as dynamic;
     }
     try {
-      return _i26.Protocol().deserialize<T>(data, t);
+      return _i24.Protocol().deserialize<T>(data, t);
     } catch (_) {}
     return super.deserialize<T>(data, t);
   }
@@ -219,7 +207,7 @@ class Protocol extends _i1.SerializationManager {
   @override
   String? getClassNameForObject(Object data) {
     String? className;
-    className = _i26.Protocol().getClassNameForObject(data);
+    className = _i24.Protocol().getClassNameForObject(data);
     if (className != null) {
       return 'serverpod_auth.$className';
     }
@@ -238,43 +226,37 @@ class Protocol extends _i1.SerializationManager {
     if (data is _i6.District) {
       return 'District';
     }
-    if (data is _i7.Example) {
-      return 'Example';
-    }
-    if (data is _i8.Example) {
-      return 'Example';
-    }
-    if (data is _i9.MaintainenceCharges) {
+    if (data is _i7.MaintainenceCharges) {
       return 'MaintainenceCharges';
     }
-    if (data is _i10.MaintenanceBook) {
+    if (data is _i8.MaintenanceBook) {
       return 'MaintenanceBook';
     }
-    if (data is _i11.Members) {
+    if (data is _i9.Members) {
       return 'Members';
     }
-    if (data is _i12.Rooms) {
+    if (data is _i10.Rooms) {
       return 'Rooms';
     }
-    if (data is _i13.SocBody) {
+    if (data is _i11.SocBody) {
       return 'SocBody';
     }
-    if (data is _i14.Society) {
+    if (data is _i12.Society) {
       return 'Society';
     }
-    if (data is _i15.SocietyAmenities) {
+    if (data is _i13.SocietyAmenities) {
       return 'SocietyAmenities';
     }
-    if (data is _i16.State) {
+    if (data is _i14.State) {
       return 'State';
     }
-    if (data is _i17.UserLogin) {
+    if (data is _i15.UserLogin) {
       return 'UserLogin';
     }
-    if (data is _i18.UserRoom) {
+    if (data is _i16.UserRoom) {
       return 'UserRoom';
     }
-    if (data is _i19.Vehicles) {
+    if (data is _i17.Vehicles) {
       return 'Vehicles';
     }
     return super.getClassNameForObject(data);
@@ -284,7 +266,7 @@ class Protocol extends _i1.SerializationManager {
   dynamic deserializeByClassName(Map<String, dynamic> data) {
     if (data['className'].startsWith('serverpod_auth.')) {
       data['className'] = data['className'].substring(15);
-      return _i26.Protocol().deserializeByClassName(data);
+      return _i24.Protocol().deserializeByClassName(data);
     }
     if (data['className'] == 'Address') {
       return deserialize<_i2.Address>(data['data']);
@@ -301,44 +283,38 @@ class Protocol extends _i1.SerializationManager {
     if (data['className'] == 'District') {
       return deserialize<_i6.District>(data['data']);
     }
-    if (data['className'] == 'Example') {
-      return deserialize<_i7.Example>(data['data']);
-    }
-    if (data['className'] == 'Example') {
-      return deserialize<_i8.Example>(data['data']);
-    }
     if (data['className'] == 'MaintainenceCharges') {
-      return deserialize<_i9.MaintainenceCharges>(data['data']);
+      return deserialize<_i7.MaintainenceCharges>(data['data']);
     }
     if (data['className'] == 'MaintenanceBook') {
-      return deserialize<_i10.MaintenanceBook>(data['data']);
+      return deserialize<_i8.MaintenanceBook>(data['data']);
     }
     if (data['className'] == 'Members') {
-      return deserialize<_i11.Members>(data['data']);
+      return deserialize<_i9.Members>(data['data']);
     }
     if (data['className'] == 'Rooms') {
-      return deserialize<_i12.Rooms>(data['data']);
+      return deserialize<_i10.Rooms>(data['data']);
     }
     if (data['className'] == 'SocBody') {
-      return deserialize<_i13.SocBody>(data['data']);
+      return deserialize<_i11.SocBody>(data['data']);
     }
     if (data['className'] == 'Society') {
-      return deserialize<_i14.Society>(data['data']);
+      return deserialize<_i12.Society>(data['data']);
     }
     if (data['className'] == 'SocietyAmenities') {
-      return deserialize<_i15.SocietyAmenities>(data['data']);
+      return deserialize<_i13.SocietyAmenities>(data['data']);
     }
     if (data['className'] == 'State') {
-      return deserialize<_i16.State>(data['data']);
+      return deserialize<_i14.State>(data['data']);
     }
     if (data['className'] == 'UserLogin') {
-      return deserialize<_i17.UserLogin>(data['data']);
+      return deserialize<_i15.UserLogin>(data['data']);
     }
     if (data['className'] == 'UserRoom') {
-      return deserialize<_i18.UserRoom>(data['data']);
+      return deserialize<_i16.UserRoom>(data['data']);
     }
     if (data['className'] == 'Vehicles') {
-      return deserialize<_i19.Vehicles>(data['data']);
+      return deserialize<_i17.Vehicles>(data['data']);
     }
     return super.deserializeByClassName(data);
   }

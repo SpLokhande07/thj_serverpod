@@ -1,6 +1,7 @@
  
-import 'package:thj_server/src/generated/area.dart';
+
 import 'package:serverpod/serverpod.dart';
+import 'package:thj_server/src/generated/protocol.dart';
 
 class AreaEndpoint extends Endpoint {
   Future<bool> addArea(Session session, Area area) async {
@@ -8,7 +9,7 @@ class AreaEndpoint extends Endpoint {
     return true;
   }
 
-  Future<List<Area>> getArea(Session session, int cityId,
+  Future<List<Area>> getArea(Session session, String cityId,
       {String? keyword}) async {
     return await Area.find(session,
         where: (t) =>

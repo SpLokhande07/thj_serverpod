@@ -1,7 +1,7 @@
 class: MaintainenceCharges
 table: maintainence_charges
 fields:
-  socId: int
+  socId: UuidValue
   fromDate: DateTime
   toDate: DateTime
   oneBhk: int
@@ -19,3 +19,4 @@ fields:
   penalty: int
   dueDate: int
   isActive: bool
+  maintainence_charges_id: String

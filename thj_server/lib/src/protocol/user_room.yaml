@@ -1,9 +1,9 @@
 class: UserRoom
 table: user_room
 fields:
-  socId: int
-  userId: int
-  roomId: int
+  socId: UuidValue
+  userId: UuidValue
+  roomId: UuidValue
   fromDate: DateTime
   toDate: DateTime
   ownership: bool

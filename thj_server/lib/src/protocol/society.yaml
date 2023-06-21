@@ -2,8 +2,9 @@ class: Society
 table: society
 fields:
   socName: String
+  socId: UuidValue
   socRegNo: String
-  socAddressId: int
+  socAddressId: UuidValue
   totalRoom: int
   totalBlock: int
   totalShop: int

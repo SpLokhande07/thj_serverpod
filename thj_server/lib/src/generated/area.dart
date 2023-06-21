@@ -11,6 +11,7 @@ import 'package:serverpod/serverpod.dart' as _i1;
 class Area extends _i1.TableRow {
   Area({
     int? id,
+    required this.areaId,
     required this.area,
     required this.cityId,
   }) : super(id);
@@ -21,17 +22,21 @@ class Area extends _i1.TableRow {
   ) {
     return Area(
       id: serializationManager.deserialize<int?>(jsonSerialization['id']),
+      areaId: serializationManager
+          .deserialize<_i1.UuidValue>(jsonSerialization['areaId']),
       area: serializationManager.deserialize<String>(jsonSerialization['area']),
       cityId:
-          serializationManager.deserialize<int>(jsonSerialization['cityId']),
+          serializationManager.deserialize<String>(jsonSerialization['cityId']),
     );
   }
 
   static final t = AreaTable();
 
+  _i1.UuidValue areaId;
+
   String area;
 
-  int cityId;
+  String cityId;
 
   @override
   String get tableName => 'area';
@@ -39,6 +44,7 @@ class Area extends _i1.TableRow {
   Map<String, dynamic> toJson() {
     return {
       'id': id,
+      'areaId': areaId,
       'area': area,
       'cityId': cityId,
     };
@@ -48,6 +54,7 @@ class Area extends _i1.TableRow {
   Map<String, dynamic> toJsonForDatabase() {
     return {
       'id': id,
+      'areaId': areaId,
       'area': area,
       'cityId': cityId,
     };
@@ -57,6 +64,7 @@ class Area extends _i1.TableRow {
   Map<String, dynamic> allToJson() {
     return {
       'id': id,
+      'areaId': areaId,
       'area': area,
       'cityId': cityId,
     };
@@ -70,6 +78,9 @@ class Area extends _i1.TableRow {
     switch (columnName) {
       case 'id':
         id = value;
+        return;
+      case 'areaId':
+        areaId = value;
         return;
       case 'area':
         area = value;
@@ -201,13 +212,16 @@ class AreaTable extends _i1.Table {
   /// the id will be null.
   final id = _i1.ColumnInt('id');
 
+  final areaId = _i1.ColumnUuid('areaId');
+
   final area = _i1.ColumnString('area');
 
-  final cityId = _i1.ColumnInt('cityId');
+  final cityId = _i1.ColumnString('cityId');
 
   @override
   List<_i1.Column> get columns => [
         id,
+        areaId,
         area,
         cityId,
       ];

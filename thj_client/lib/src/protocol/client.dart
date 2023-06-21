@@ -31,7 +31,7 @@ class _EndpointArea extends _i1.EndpointRef {
       );
 
   _i2.Future<List<_i3.Area>> getArea(
-    int cityId, {
+    String cityId, {
     String? keyword,
   }) =>
       caller.callServerEndpoint<List<_i3.Area>>(
@@ -162,19 +162,6 @@ class _EndpointDistrict extends _i1.EndpointRef {
       );
 }
 
-class _EndpointExample extends _i1.EndpointRef {
-  _EndpointExample(_i1.EndpointCaller caller) : super(caller);
-
-  @override
-  String get name => 'example';
-
-  _i2.Future<String> hello(String name) => caller.callServerEndpoint<String>(
-        'example',
-        'hello',
-        {'name': name},
-      );
-}
-
 class _EndpointSociety extends _i1.EndpointRef {
   _EndpointSociety(_i1.EndpointCaller caller) : super(caller);
 
@@ -272,7 +259,6 @@ class Client extends _i1.ServerpodClient {
     city = _EndpointCity(this);
     country = _EndpointCountry(this);
     district = _EndpointDistrict(this);
-    example = _EndpointExample(this);
     society = _EndpointSociety(this);
     state = _EndpointState(this);
     members = _EndpointMembers(this);
@@ -286,8 +272,6 @@ class Client extends _i1.ServerpodClient {
   late final _EndpointCountry country;
 
   late final _EndpointDistrict district;
-
-  late final _EndpointExample example;
 
   late final _EndpointSociety society;
 
@@ -303,7 +287,6 @@ class Client extends _i1.ServerpodClient {
         'city': city,
         'country': country,
         'district': district,
-        'example': example,
         'society': society,
         'state': state,
         'members': members,

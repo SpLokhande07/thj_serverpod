@@ -12,6 +12,7 @@ class Society extends _i1.TableRow {
   Society({
     int? id,
     required this.socName,
+    required this.socId,
     required this.socRegNo,
     required this.socAddressId,
     required this.totalRoom,
@@ -32,10 +33,12 @@ class Society extends _i1.TableRow {
       id: serializationManager.deserialize<int?>(jsonSerialization['id']),
       socName: serializationManager
           .deserialize<String>(jsonSerialization['socName']),
+      socId: serializationManager
+          .deserialize<_i1.UuidValue>(jsonSerialization['socId']),
       socRegNo: serializationManager
           .deserialize<String>(jsonSerialization['socRegNo']),
       socAddressId: serializationManager
-          .deserialize<int>(jsonSerialization['socAddressId']),
+          .deserialize<_i1.UuidValue>(jsonSerialization['socAddressId']),
       totalRoom:
           serializationManager.deserialize<int>(jsonSerialization['totalRoom']),
       totalBlock: serializationManager
@@ -59,9 +62,11 @@ class Society extends _i1.TableRow {
 
   String socName;
 
+  _i1.UuidValue socId;
+
   String socRegNo;
 
-  int socAddressId;
+  _i1.UuidValue socAddressId;
 
   int totalRoom;
 
@@ -86,6 +91,7 @@ class Society extends _i1.TableRow {
     return {
       'id': id,
       'socName': socName,
+      'socId': socId,
       'socRegNo': socRegNo,
       'socAddressId': socAddressId,
       'totalRoom': totalRoom,
@@ -104,6 +110,7 @@ class Society extends _i1.TableRow {
     return {
       'id': id,
       'socName': socName,
+      'socId': socId,
       'socRegNo': socRegNo,
       'socAddressId': socAddressId,
       'totalRoom': totalRoom,
@@ -122,6 +129,7 @@ class Society extends _i1.TableRow {
     return {
       'id': id,
       'socName': socName,
+      'socId': socId,
       'socRegNo': socRegNo,
       'socAddressId': socAddressId,
       'totalRoom': totalRoom,
@@ -146,6 +154,9 @@ class Society extends _i1.TableRow {
         return;
       case 'socName':
         socName = value;
+        return;
+      case 'socId':
+        socId = value;
         return;
       case 'socRegNo':
         socRegNo = value;
@@ -303,9 +314,11 @@ class SocietyTable extends _i1.Table {
 
   final socName = _i1.ColumnString('socName');
 
+  final socId = _i1.ColumnUuid('socId');
+
   final socRegNo = _i1.ColumnString('socRegNo');
 
-  final socAddressId = _i1.ColumnInt('socAddressId');
+  final socAddressId = _i1.ColumnUuid('socAddressId');
 
   final totalRoom = _i1.ColumnInt('totalRoom');
 
@@ -327,6 +340,7 @@ class SocietyTable extends _i1.Table {
   List<_i1.Column> get columns => [
         id,
         socName,
+        socId,
         socRegNo,
         socAddressId,
         totalRoom,

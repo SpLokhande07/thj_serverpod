@@ -15,32 +15,28 @@ import 'area.dart' as _i5;
 import 'city.dart' as _i6;
 import 'country.dart' as _i7;
 import 'district.dart' as _i8;
-import 'example.dart' as _i9;
-import 'example_class.dart' as _i10;
-import 'maintainence_charges.dart' as _i11;
-import 'maintenance_book.dart' as _i12;
-import 'members.dart' as _i13;
-import 'rooms.dart' as _i14;
-import 'soc_body.dart' as _i15;
-import 'society.dart' as _i16;
-import 'society_amenities.dart' as _i17;
-import 'state.dart' as _i18;
-import 'user_login.dart' as _i19;
-import 'user_room.dart' as _i20;
-import 'vehicles.dart' as _i21;
-import 'package:thj_server/src/generated/area.dart' as _i22;
-import 'package:thj_server/src/generated/city.dart' as _i23;
-import 'package:thj_server/src/generated/country.dart' as _i24;
-import 'package:thj_server/src/generated/district.dart' as _i25;
-import 'package:thj_server/src/generated/state.dart' as _i26;
-import 'package:thj_server/src/generated/members.dart' as _i27;
+import 'maintainence_charges.dart' as _i9;
+import 'maintenance_book.dart' as _i10;
+import 'members.dart' as _i11;
+import 'rooms.dart' as _i12;
+import 'soc_body.dart' as _i13;
+import 'society.dart' as _i14;
+import 'society_amenities.dart' as _i15;
+import 'state.dart' as _i16;
+import 'user_login.dart' as _i17;
+import 'user_room.dart' as _i18;
+import 'vehicles.dart' as _i19;
+import 'package:thj_server/src/generated/area.dart' as _i20;
+import 'package:thj_server/src/generated/city.dart' as _i21;
+import 'package:thj_server/src/generated/country.dart' as _i22;
+import 'package:thj_server/src/generated/district.dart' as _i23;
+import 'package:thj_server/src/generated/state.dart' as _i24;
+import 'package:thj_server/src/generated/members.dart' as _i25;
 export 'address.dart';
 export 'area.dart';
 export 'city.dart';
 export 'country.dart';
 export 'district.dart';
-export 'example.dart';
-export 'example_class.dart';
 export 'maintainence_charges.dart';
 export 'maintenance_book.dart';
 export 'members.dart';
@@ -75,46 +71,52 @@ class Protocol extends _i1.SerializationManagerServer {
           columnDefault: 'nextval(\'address_id_seq\'::regclass)',
         ),
         _i2.ColumnDefinition(
-          name: 'areaId',
-          columnType: _i2.ColumnType.integer,
+          name: 'addressId',
+          columnType: _i2.ColumnType.uuid,
           isNullable: false,
-          dartType: 'int',
+          dartType: 'UuidValue',
+        ),
+        _i2.ColumnDefinition(
+          name: 'areaId',
+          columnType: _i2.ColumnType.uuid,
+          isNullable: false,
+          dartType: 'UuidValue',
         ),
         _i2.ColumnDefinition(
           name: 'wardId',
-          columnType: _i2.ColumnType.integer,
+          columnType: _i2.ColumnType.uuid,
           isNullable: false,
-          dartType: 'int',
+          dartType: 'UuidValue',
         ),
         _i2.ColumnDefinition(
           name: 'cityId',
-          columnType: _i2.ColumnType.integer,
+          columnType: _i2.ColumnType.uuid,
           isNullable: false,
-          dartType: 'int',
+          dartType: 'UuidValue',
         ),
         _i2.ColumnDefinition(
           name: 'mcId',
-          columnType: _i2.ColumnType.integer,
+          columnType: _i2.ColumnType.uuid,
           isNullable: false,
-          dartType: 'int',
+          dartType: 'UuidValue',
         ),
         _i2.ColumnDefinition(
           name: 'districtId',
-          columnType: _i2.ColumnType.integer,
+          columnType: _i2.ColumnType.uuid,
           isNullable: false,
-          dartType: 'int',
+          dartType: 'UuidValue',
         ),
         _i2.ColumnDefinition(
           name: 'stateId',
-          columnType: _i2.ColumnType.integer,
+          columnType: _i2.ColumnType.uuid,
           isNullable: false,
-          dartType: 'int',
+          dartType: 'UuidValue',
         ),
         _i2.ColumnDefinition(
           name: 'countryId',
-          columnType: _i2.ColumnType.integer,
+          columnType: _i2.ColumnType.uuid,
           isNullable: false,
-          dartType: 'int',
+          dartType: 'UuidValue',
         ),
         _i2.ColumnDefinition(
           name: 'fullAddress',
@@ -165,6 +167,12 @@ class Protocol extends _i1.SerializationManagerServer {
           columnDefault: 'nextval(\'area_id_seq\'::regclass)',
         ),
         _i2.ColumnDefinition(
+          name: 'areaId',
+          columnType: _i2.ColumnType.uuid,
+          isNullable: false,
+          dartType: 'UuidValue',
+        ),
+        _i2.ColumnDefinition(
           name: 'area',
           columnType: _i2.ColumnType.text,
           isNullable: false,
@@ -172,9 +180,9 @@ class Protocol extends _i1.SerializationManagerServer {
         ),
         _i2.ColumnDefinition(
           name: 'cityId',
-          columnType: _i2.ColumnType.integer,
+          columnType: _i2.ColumnType.text,
           isNullable: false,
-          dartType: 'int',
+          dartType: 'String',
         ),
       ],
       foreignKeys: [],
@@ -208,15 +216,21 @@ class Protocol extends _i1.SerializationManagerServer {
         ),
         _i2.ColumnDefinition(
           name: 'districtId',
-          columnType: _i2.ColumnType.integer,
+          columnType: _i2.ColumnType.uuid,
           isNullable: false,
-          dartType: 'int',
+          dartType: 'UuidValue',
         ),
         _i2.ColumnDefinition(
           name: 'city',
           columnType: _i2.ColumnType.text,
           isNullable: false,
           dartType: 'String',
+        ),
+        _i2.ColumnDefinition(
+          name: 'cityId',
+          columnType: _i2.ColumnType.uuid,
+          isNullable: false,
+          dartType: 'UuidValue',
         ),
       ],
       foreignKeys: [],
@@ -250,33 +264,39 @@ class Protocol extends _i1.SerializationManagerServer {
         ),
         _i2.ColumnDefinition(
           name: 'areaId',
-          columnType: _i2.ColumnType.integer,
+          columnType: _i2.ColumnType.uuid,
           isNullable: false,
-          dartType: 'int',
+          dartType: 'UuidValue',
         ),
         _i2.ColumnDefinition(
           name: 'cityId',
-          columnType: _i2.ColumnType.integer,
+          columnType: _i2.ColumnType.uuid,
           isNullable: false,
-          dartType: 'int',
+          dartType: 'UuidValue',
         ),
         _i2.ColumnDefinition(
           name: 'districtId',
-          columnType: _i2.ColumnType.integer,
+          columnType: _i2.ColumnType.uuid,
           isNullable: false,
-          dartType: 'int',
+          dartType: 'UuidValue',
         ),
         _i2.ColumnDefinition(
           name: 'stateId',
-          columnType: _i2.ColumnType.integer,
+          columnType: _i2.ColumnType.uuid,
           isNullable: false,
-          dartType: 'int',
+          dartType: 'UuidValue',
         ),
         _i2.ColumnDefinition(
           name: 'country',
           columnType: _i2.ColumnType.text,
           isNullable: false,
           dartType: 'String',
+        ),
+        _i2.ColumnDefinition(
+          name: 'countryId',
+          columnType: _i2.ColumnType.uuid,
+          isNullable: false,
+          dartType: 'UuidValue',
         ),
       ],
       foreignKeys: [],
@@ -310,15 +330,21 @@ class Protocol extends _i1.SerializationManagerServer {
         ),
         _i2.ColumnDefinition(
           name: 'stateId',
-          columnType: _i2.ColumnType.integer,
+          columnType: _i2.ColumnType.uuid,
           isNullable: false,
-          dartType: 'int',
+          dartType: 'UuidValue',
         ),
         _i2.ColumnDefinition(
           name: 'district',
           columnType: _i2.ColumnType.text,
           isNullable: false,
           dartType: 'String',
+        ),
+        _i2.ColumnDefinition(
+          name: 'districtId',
+          columnType: _i2.ColumnType.uuid,
+          isNullable: false,
+          dartType: 'UuidValue',
         ),
       ],
       foreignKeys: [],
@@ -352,9 +378,9 @@ class Protocol extends _i1.SerializationManagerServer {
         ),
         _i2.ColumnDefinition(
           name: 'socId',
-          columnType: _i2.ColumnType.integer,
+          columnType: _i2.ColumnType.uuid,
           isNullable: false,
-          dartType: 'int',
+          dartType: 'UuidValue',
         ),
         _i2.ColumnDefinition(
           name: 'fromDate',
@@ -458,6 +484,12 @@ class Protocol extends _i1.SerializationManagerServer {
           isNullable: false,
           dartType: 'bool',
         ),
+        _i2.ColumnDefinition(
+          name: 'maintainence_charges_id',
+          columnType: _i2.ColumnType.text,
+          isNullable: false,
+          dartType: 'String',
+        ),
       ],
       foreignKeys: [],
       indexes: [
@@ -490,15 +522,15 @@ class Protocol extends _i1.SerializationManagerServer {
         ),
         _i2.ColumnDefinition(
           name: 'socId',
-          columnType: _i2.ColumnType.integer,
+          columnType: _i2.ColumnType.uuid,
           isNullable: false,
-          dartType: 'int',
+          dartType: 'UuidValue',
         ),
         _i2.ColumnDefinition(
           name: 'receiptId',
-          columnType: _i2.ColumnType.integer,
+          columnType: _i2.ColumnType.uuid,
           isNullable: false,
-          dartType: 'int',
+          dartType: 'UuidValue',
         ),
         _i2.ColumnDefinition(
           name: 'roomNo',
@@ -583,6 +615,12 @@ class Protocol extends _i1.SerializationManagerServer {
           isNullable: false,
           dartType: 'int?',
           columnDefault: 'nextval(\'members_id_seq\'::regclass)',
+        ),
+        _i2.ColumnDefinition(
+          name: 'memberId',
+          columnType: _i2.ColumnType.uuid,
+          isNullable: false,
+          dartType: 'UuidValue',
         ),
         _i2.ColumnDefinition(
           name: 'name',
@@ -682,9 +720,15 @@ class Protocol extends _i1.SerializationManagerServer {
         ),
         _i2.ColumnDefinition(
           name: 'socId',
-          columnType: _i2.ColumnType.integer,
+          columnType: _i2.ColumnType.uuid,
           isNullable: false,
-          dartType: 'int',
+          dartType: 'UuidValue',
+        ),
+        _i2.ColumnDefinition(
+          name: 'roomId',
+          columnType: _i2.ColumnType.uuid,
+          isNullable: false,
+          dartType: 'UuidValue',
         ),
         _i2.ColumnDefinition(
           name: 'roomNo',
@@ -796,57 +840,57 @@ class Protocol extends _i1.SerializationManagerServer {
         ),
         _i2.ColumnDefinition(
           name: 'socId',
-          columnType: _i2.ColumnType.integer,
+          columnType: _i2.ColumnType.uuid,
           isNullable: false,
-          dartType: 'int',
+          dartType: 'UuidValue',
         ),
         _i2.ColumnDefinition(
           name: 'chairman',
-          columnType: _i2.ColumnType.integer,
+          columnType: _i2.ColumnType.text,
           isNullable: false,
-          dartType: 'int',
+          dartType: 'String',
         ),
         _i2.ColumnDefinition(
           name: 'secretary',
-          columnType: _i2.ColumnType.integer,
+          columnType: _i2.ColumnType.text,
           isNullable: false,
-          dartType: 'int',
+          dartType: 'String',
         ),
         _i2.ColumnDefinition(
           name: 'treasurer',
-          columnType: _i2.ColumnType.integer,
+          columnType: _i2.ColumnType.text,
           isNullable: false,
-          dartType: 'int',
+          dartType: 'String',
         ),
         _i2.ColumnDefinition(
           name: 'viceChairman',
-          columnType: _i2.ColumnType.integer,
+          columnType: _i2.ColumnType.text,
           isNullable: false,
-          dartType: 'int',
+          dartType: 'String',
         ),
         _i2.ColumnDefinition(
           name: 'viceSecretary',
-          columnType: _i2.ColumnType.integer,
+          columnType: _i2.ColumnType.text,
           isNullable: false,
-          dartType: 'int',
+          dartType: 'String',
         ),
         _i2.ColumnDefinition(
           name: 'viceTreasurer',
-          columnType: _i2.ColumnType.integer,
+          columnType: _i2.ColumnType.text,
           isNullable: false,
-          dartType: 'int',
+          dartType: 'String',
         ),
         _i2.ColumnDefinition(
           name: 'members',
           columnType: _i2.ColumnType.json,
           isNullable: false,
-          dartType: 'List<int>',
+          dartType: 'List<String>',
         ),
         _i2.ColumnDefinition(
           name: 'year',
-          columnType: _i2.ColumnType.integer,
+          columnType: _i2.ColumnType.text,
           isNullable: false,
-          dartType: 'int',
+          dartType: 'String',
         ),
       ],
       foreignKeys: [],
@@ -885,6 +929,12 @@ class Protocol extends _i1.SerializationManagerServer {
           dartType: 'String',
         ),
         _i2.ColumnDefinition(
+          name: 'socId',
+          columnType: _i2.ColumnType.uuid,
+          isNullable: false,
+          dartType: 'UuidValue',
+        ),
+        _i2.ColumnDefinition(
           name: 'socRegNo',
           columnType: _i2.ColumnType.text,
           isNullable: false,
@@ -892,9 +942,9 @@ class Protocol extends _i1.SerializationManagerServer {
         ),
         _i2.ColumnDefinition(
           name: 'socAddressId',
-          columnType: _i2.ColumnType.integer,
+          columnType: _i2.ColumnType.uuid,
           isNullable: false,
-          dartType: 'int',
+          dartType: 'UuidValue',
         ),
         _i2.ColumnDefinition(
           name: 'totalRoom',
@@ -976,9 +1026,9 @@ class Protocol extends _i1.SerializationManagerServer {
         ),
         _i2.ColumnDefinition(
           name: 'socId',
-          columnType: _i2.ColumnType.integer,
+          columnType: _i2.ColumnType.uuid,
           isNullable: false,
-          dartType: 'int',
+          dartType: 'UuidValue',
         ),
         _i2.ColumnDefinition(
           name: 'bikeParking',
@@ -1090,15 +1140,21 @@ class Protocol extends _i1.SerializationManagerServer {
         ),
         _i2.ColumnDefinition(
           name: 'countryId',
-          columnType: _i2.ColumnType.integer,
+          columnType: _i2.ColumnType.uuid,
           isNullable: false,
-          dartType: 'int',
+          dartType: 'UuidValue',
         ),
         _i2.ColumnDefinition(
           name: 'state',
           columnType: _i2.ColumnType.text,
           isNullable: false,
           dartType: 'String',
+        ),
+        _i2.ColumnDefinition(
+          name: 'stateId',
+          columnType: _i2.ColumnType.uuid,
+          isNullable: false,
+          dartType: 'UuidValue',
         ),
       ],
       foreignKeys: [],
@@ -1132,21 +1188,21 @@ class Protocol extends _i1.SerializationManagerServer {
         ),
         _i2.ColumnDefinition(
           name: 'socId',
-          columnType: _i2.ColumnType.integer,
+          columnType: _i2.ColumnType.uuid,
           isNullable: false,
-          dartType: 'int',
+          dartType: 'UuidValue',
         ),
         _i2.ColumnDefinition(
           name: 'userId',
-          columnType: _i2.ColumnType.integer,
+          columnType: _i2.ColumnType.uuid,
           isNullable: false,
-          dartType: 'int',
+          dartType: 'UuidValue',
         ),
         _i2.ColumnDefinition(
           name: 'roomId',
-          columnType: _i2.ColumnType.integer,
+          columnType: _i2.ColumnType.uuid,
           isNullable: false,
-          dartType: 'int',
+          dartType: 'UuidValue',
         ),
         _i2.ColumnDefinition(
           name: 'fromDate',
@@ -1216,21 +1272,21 @@ class Protocol extends _i1.SerializationManagerServer {
         ),
         _i2.ColumnDefinition(
           name: 'ownerId',
-          columnType: _i2.ColumnType.integer,
+          columnType: _i2.ColumnType.uuid,
           isNullable: false,
-          dartType: 'int',
+          dartType: 'UuidValue',
         ),
         _i2.ColumnDefinition(
           name: 'roomId',
-          columnType: _i2.ColumnType.integer,
+          columnType: _i2.ColumnType.uuid,
           isNullable: false,
-          dartType: 'int',
+          dartType: 'UuidValue',
         ),
         _i2.ColumnDefinition(
           name: 'vehicleType',
-          columnType: _i2.ColumnType.integer,
+          columnType: _i2.ColumnType.text,
           isNullable: false,
-          dartType: 'int',
+          dartType: 'String',
         ),
         _i2.ColumnDefinition(
           name: 'entryDate',
@@ -1291,44 +1347,38 @@ class Protocol extends _i1.SerializationManagerServer {
     if (t == _i8.District) {
       return _i8.District.fromJson(data, this) as T;
     }
-    if (t == _i9.Example) {
-      return _i9.Example.fromJson(data, this) as T;
+    if (t == _i9.MaintainenceCharges) {
+      return _i9.MaintainenceCharges.fromJson(data, this) as T;
     }
-    if (t == _i10.Example) {
-      return _i10.Example.fromJson(data, this) as T;
+    if (t == _i10.MaintenanceBook) {
+      return _i10.MaintenanceBook.fromJson(data, this) as T;
     }
-    if (t == _i11.MaintainenceCharges) {
-      return _i11.MaintainenceCharges.fromJson(data, this) as T;
+    if (t == _i11.Members) {
+      return _i11.Members.fromJson(data, this) as T;
     }
-    if (t == _i12.MaintenanceBook) {
-      return _i12.MaintenanceBook.fromJson(data, this) as T;
+    if (t == _i12.Rooms) {
+      return _i12.Rooms.fromJson(data, this) as T;
     }
-    if (t == _i13.Members) {
-      return _i13.Members.fromJson(data, this) as T;
+    if (t == _i13.SocBody) {
+      return _i13.SocBody.fromJson(data, this) as T;
     }
-    if (t == _i14.Rooms) {
-      return _i14.Rooms.fromJson(data, this) as T;
+    if (t == _i14.Society) {
+      return _i14.Society.fromJson(data, this) as T;
     }
-    if (t == _i15.SocBody) {
-      return _i15.SocBody.fromJson(data, this) as T;
+    if (t == _i15.SocietyAmenities) {
+      return _i15.SocietyAmenities.fromJson(data, this) as T;
     }
-    if (t == _i16.Society) {
-      return _i16.Society.fromJson(data, this) as T;
+    if (t == _i16.State) {
+      return _i16.State.fromJson(data, this) as T;
     }
-    if (t == _i17.SocietyAmenities) {
-      return _i17.SocietyAmenities.fromJson(data, this) as T;
+    if (t == _i17.UserLogin) {
+      return _i17.UserLogin.fromJson(data, this) as T;
     }
-    if (t == _i18.State) {
-      return _i18.State.fromJson(data, this) as T;
+    if (t == _i18.UserRoom) {
+      return _i18.UserRoom.fromJson(data, this) as T;
     }
-    if (t == _i19.UserLogin) {
-      return _i19.UserLogin.fromJson(data, this) as T;
-    }
-    if (t == _i20.UserRoom) {
-      return _i20.UserRoom.fromJson(data, this) as T;
-    }
-    if (t == _i21.Vehicles) {
-      return _i21.Vehicles.fromJson(data, this) as T;
+    if (t == _i19.Vehicles) {
+      return _i19.Vehicles.fromJson(data, this) as T;
     }
     if (t == _i1.getType<_i4.Address?>()) {
       return (data != null ? _i4.Address.fromJson(data, this) : null) as T;
@@ -1345,74 +1395,72 @@ class Protocol extends _i1.SerializationManagerServer {
     if (t == _i1.getType<_i8.District?>()) {
       return (data != null ? _i8.District.fromJson(data, this) : null) as T;
     }
-    if (t == _i1.getType<_i9.Example?>()) {
-      return (data != null ? _i9.Example.fromJson(data, this) : null) as T;
-    }
-    if (t == _i1.getType<_i10.Example?>()) {
-      return (data != null ? _i10.Example.fromJson(data, this) : null) as T;
-    }
-    if (t == _i1.getType<_i11.MaintainenceCharges?>()) {
+    if (t == _i1.getType<_i9.MaintainenceCharges?>()) {
       return (data != null
-          ? _i11.MaintainenceCharges.fromJson(data, this)
+          ? _i9.MaintainenceCharges.fromJson(data, this)
           : null) as T;
     }
-    if (t == _i1.getType<_i12.MaintenanceBook?>()) {
-      return (data != null ? _i12.MaintenanceBook.fromJson(data, this) : null)
+    if (t == _i1.getType<_i10.MaintenanceBook?>()) {
+      return (data != null ? _i10.MaintenanceBook.fromJson(data, this) : null)
           as T;
     }
-    if (t == _i1.getType<_i13.Members?>()) {
-      return (data != null ? _i13.Members.fromJson(data, this) : null) as T;
+    if (t == _i1.getType<_i11.Members?>()) {
+      return (data != null ? _i11.Members.fromJson(data, this) : null) as T;
     }
-    if (t == _i1.getType<_i14.Rooms?>()) {
-      return (data != null ? _i14.Rooms.fromJson(data, this) : null) as T;
+    if (t == _i1.getType<_i12.Rooms?>()) {
+      return (data != null ? _i12.Rooms.fromJson(data, this) : null) as T;
     }
-    if (t == _i1.getType<_i15.SocBody?>()) {
-      return (data != null ? _i15.SocBody.fromJson(data, this) : null) as T;
+    if (t == _i1.getType<_i13.SocBody?>()) {
+      return (data != null ? _i13.SocBody.fromJson(data, this) : null) as T;
     }
-    if (t == _i1.getType<_i16.Society?>()) {
-      return (data != null ? _i16.Society.fromJson(data, this) : null) as T;
+    if (t == _i1.getType<_i14.Society?>()) {
+      return (data != null ? _i14.Society.fromJson(data, this) : null) as T;
     }
-    if (t == _i1.getType<_i17.SocietyAmenities?>()) {
-      return (data != null ? _i17.SocietyAmenities.fromJson(data, this) : null)
+    if (t == _i1.getType<_i15.SocietyAmenities?>()) {
+      return (data != null ? _i15.SocietyAmenities.fromJson(data, this) : null)
           as T;
     }
-    if (t == _i1.getType<_i18.State?>()) {
-      return (data != null ? _i18.State.fromJson(data, this) : null) as T;
+    if (t == _i1.getType<_i16.State?>()) {
+      return (data != null ? _i16.State.fromJson(data, this) : null) as T;
     }
-    if (t == _i1.getType<_i19.UserLogin?>()) {
-      return (data != null ? _i19.UserLogin.fromJson(data, this) : null) as T;
+    if (t == _i1.getType<_i17.UserLogin?>()) {
+      return (data != null ? _i17.UserLogin.fromJson(data, this) : null) as T;
     }
-    if (t == _i1.getType<_i20.UserRoom?>()) {
-      return (data != null ? _i20.UserRoom.fromJson(data, this) : null) as T;
+    if (t == _i1.getType<_i18.UserRoom?>()) {
+      return (data != null ? _i18.UserRoom.fromJson(data, this) : null) as T;
     }
-    if (t == _i1.getType<_i21.Vehicles?>()) {
-      return (data != null ? _i21.Vehicles.fromJson(data, this) : null) as T;
+    if (t == _i1.getType<_i19.Vehicles?>()) {
+      return (data != null ? _i19.Vehicles.fromJson(data, this) : null) as T;
     }
     if (t == List<int>) {
       return (data as List).map((e) => deserialize<int>(e)).toList() as dynamic;
     }
-    if (t == List<_i22.Area>) {
-      return (data as List).map((e) => deserialize<_i22.Area>(e)).toList()
+    if (t == List<String>) {
+      return (data as List).map((e) => deserialize<String>(e)).toList()
           as dynamic;
     }
-    if (t == List<_i23.City>) {
-      return (data as List).map((e) => deserialize<_i23.City>(e)).toList()
+    if (t == List<_i20.Area>) {
+      return (data as List).map((e) => deserialize<_i20.Area>(e)).toList()
           as dynamic;
     }
-    if (t == List<_i24.Country>) {
-      return (data as List).map((e) => deserialize<_i24.Country>(e)).toList()
+    if (t == List<_i21.City>) {
+      return (data as List).map((e) => deserialize<_i21.City>(e)).toList()
           as dynamic;
     }
-    if (t == List<_i25.District>) {
-      return (data as List).map((e) => deserialize<_i25.District>(e)).toList()
+    if (t == List<_i22.Country>) {
+      return (data as List).map((e) => deserialize<_i22.Country>(e)).toList()
           as dynamic;
     }
-    if (t == List<_i26.State>) {
-      return (data as List).map((e) => deserialize<_i26.State>(e)).toList()
+    if (t == List<_i23.District>) {
+      return (data as List).map((e) => deserialize<_i23.District>(e)).toList()
           as dynamic;
     }
-    if (t == List<_i27.Members>) {
-      return (data as List).map((e) => deserialize<_i27.Members>(e)).toList()
+    if (t == List<_i24.State>) {
+      return (data as List).map((e) => deserialize<_i24.State>(e)).toList()
+          as dynamic;
+    }
+    if (t == List<_i25.Members>) {
+      return (data as List).map((e) => deserialize<_i25.Members>(e)).toList()
           as dynamic;
     }
     try {
@@ -1446,43 +1494,37 @@ class Protocol extends _i1.SerializationManagerServer {
     if (data is _i8.District) {
       return 'District';
     }
-    if (data is _i9.Example) {
-      return 'Example';
-    }
-    if (data is _i10.Example) {
-      return 'Example';
-    }
-    if (data is _i11.MaintainenceCharges) {
+    if (data is _i9.MaintainenceCharges) {
       return 'MaintainenceCharges';
     }
-    if (data is _i12.MaintenanceBook) {
+    if (data is _i10.MaintenanceBook) {
       return 'MaintenanceBook';
     }
-    if (data is _i13.Members) {
+    if (data is _i11.Members) {
       return 'Members';
     }
-    if (data is _i14.Rooms) {
+    if (data is _i12.Rooms) {
       return 'Rooms';
     }
-    if (data is _i15.SocBody) {
+    if (data is _i13.SocBody) {
       return 'SocBody';
     }
-    if (data is _i16.Society) {
+    if (data is _i14.Society) {
       return 'Society';
     }
-    if (data is _i17.SocietyAmenities) {
+    if (data is _i15.SocietyAmenities) {
       return 'SocietyAmenities';
     }
-    if (data is _i18.State) {
+    if (data is _i16.State) {
       return 'State';
     }
-    if (data is _i19.UserLogin) {
+    if (data is _i17.UserLogin) {
       return 'UserLogin';
     }
-    if (data is _i20.UserRoom) {
+    if (data is _i18.UserRoom) {
       return 'UserRoom';
     }
-    if (data is _i21.Vehicles) {
+    if (data is _i19.Vehicles) {
       return 'Vehicles';
     }
     return super.getClassNameForObject(data);
@@ -1509,44 +1551,38 @@ class Protocol extends _i1.SerializationManagerServer {
     if (data['className'] == 'District') {
       return deserialize<_i8.District>(data['data']);
     }
-    if (data['className'] == 'Example') {
-      return deserialize<_i9.Example>(data['data']);
-    }
-    if (data['className'] == 'Example') {
-      return deserialize<_i10.Example>(data['data']);
-    }
     if (data['className'] == 'MaintainenceCharges') {
-      return deserialize<_i11.MaintainenceCharges>(data['data']);
+      return deserialize<_i9.MaintainenceCharges>(data['data']);
     }
     if (data['className'] == 'MaintenanceBook') {
-      return deserialize<_i12.MaintenanceBook>(data['data']);
+      return deserialize<_i10.MaintenanceBook>(data['data']);
     }
     if (data['className'] == 'Members') {
-      return deserialize<_i13.Members>(data['data']);
+      return deserialize<_i11.Members>(data['data']);
     }
     if (data['className'] == 'Rooms') {
-      return deserialize<_i14.Rooms>(data['data']);
+      return deserialize<_i12.Rooms>(data['data']);
     }
     if (data['className'] == 'SocBody') {
-      return deserialize<_i15.SocBody>(data['data']);
+      return deserialize<_i13.SocBody>(data['data']);
     }
     if (data['className'] == 'Society') {
-      return deserialize<_i16.Society>(data['data']);
+      return deserialize<_i14.Society>(data['data']);
     }
     if (data['className'] == 'SocietyAmenities') {
-      return deserialize<_i17.SocietyAmenities>(data['data']);
+      return deserialize<_i15.SocietyAmenities>(data['data']);
     }
     if (data['className'] == 'State') {
-      return deserialize<_i18.State>(data['data']);
+      return deserialize<_i16.State>(data['data']);
     }
     if (data['className'] == 'UserLogin') {
-      return deserialize<_i19.UserLogin>(data['data']);
+      return deserialize<_i17.UserLogin>(data['data']);
     }
     if (data['className'] == 'UserRoom') {
-      return deserialize<_i20.UserRoom>(data['data']);
+      return deserialize<_i18.UserRoom>(data['data']);
     }
     if (data['className'] == 'Vehicles') {
-      return deserialize<_i21.Vehicles>(data['data']);
+      return deserialize<_i19.Vehicles>(data['data']);
     }
     return super.deserializeByClassName(data);
   }
@@ -1576,26 +1612,26 @@ class Protocol extends _i1.SerializationManagerServer {
         return _i7.Country.t;
       case _i8.District:
         return _i8.District.t;
-      case _i11.MaintainenceCharges:
-        return _i11.MaintainenceCharges.t;
-      case _i12.MaintenanceBook:
-        return _i12.MaintenanceBook.t;
-      case _i13.Members:
-        return _i13.Members.t;
-      case _i14.Rooms:
-        return _i14.Rooms.t;
-      case _i15.SocBody:
-        return _i15.SocBody.t;
-      case _i16.Society:
-        return _i16.Society.t;
-      case _i17.SocietyAmenities:
-        return _i17.SocietyAmenities.t;
-      case _i18.State:
-        return _i18.State.t;
-      case _i20.UserRoom:
-        return _i20.UserRoom.t;
-      case _i21.Vehicles:
-        return _i21.Vehicles.t;
+      case _i9.MaintainenceCharges:
+        return _i9.MaintainenceCharges.t;
+      case _i10.MaintenanceBook:
+        return _i10.MaintenanceBook.t;
+      case _i11.Members:
+        return _i11.Members.t;
+      case _i12.Rooms:
+        return _i12.Rooms.t;
+      case _i13.SocBody:
+        return _i13.SocBody.t;
+      case _i14.Society:
+        return _i14.Society.t;
+      case _i15.SocietyAmenities:
+        return _i15.SocietyAmenities.t;
+      case _i16.State:
+        return _i16.State.t;
+      case _i18.UserRoom:
+        return _i18.UserRoom.t;
+      case _i19.Vehicles:
+        return _i19.Vehicles.t;
     }
     return null;
   }

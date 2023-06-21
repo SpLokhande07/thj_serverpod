@@ -1,7 +1,8 @@
 class: Rooms
 table: rooms
 fields:
- socId: int
+ socId: UuidValue
+ roomId: UuidValue
  roomNo: int
  owner: String
  onRent: bool

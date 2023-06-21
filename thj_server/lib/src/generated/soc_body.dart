@@ -28,44 +28,45 @@ class SocBody extends _i1.TableRow {
   ) {
     return SocBody(
       id: serializationManager.deserialize<int?>(jsonSerialization['id']),
-      socId: serializationManager.deserialize<int>(jsonSerialization['socId']),
-      chairman:
-          serializationManager.deserialize<int>(jsonSerialization['chairman']),
-      secretary:
-          serializationManager.deserialize<int>(jsonSerialization['secretary']),
-      treasurer:
-          serializationManager.deserialize<int>(jsonSerialization['treasurer']),
+      socId: serializationManager
+          .deserialize<_i1.UuidValue>(jsonSerialization['socId']),
+      chairman: serializationManager
+          .deserialize<String>(jsonSerialization['chairman']),
+      secretary: serializationManager
+          .deserialize<String>(jsonSerialization['secretary']),
+      treasurer: serializationManager
+          .deserialize<String>(jsonSerialization['treasurer']),
       viceChairman: serializationManager
-          .deserialize<int>(jsonSerialization['viceChairman']),
+          .deserialize<String>(jsonSerialization['viceChairman']),
       viceSecretary: serializationManager
-          .deserialize<int>(jsonSerialization['viceSecretary']),
+          .deserialize<String>(jsonSerialization['viceSecretary']),
       viceTreasurer: serializationManager
-          .deserialize<int>(jsonSerialization['viceTreasurer']),
+          .deserialize<String>(jsonSerialization['viceTreasurer']),
       members: serializationManager
-          .deserialize<List<int>>(jsonSerialization['members']),
-      year: serializationManager.deserialize<int>(jsonSerialization['year']),
+          .deserialize<List<String>>(jsonSerialization['members']),
+      year: serializationManager.deserialize<String>(jsonSerialization['year']),
     );
   }
 
   static final t = SocBodyTable();
 
-  int socId;
+  _i1.UuidValue socId;
 
-  int chairman;
+  String chairman;
 
-  int secretary;
+  String secretary;
 
-  int treasurer;
+  String treasurer;
 
-  int viceChairman;
+  String viceChairman;
 
-  int viceSecretary;
+  String viceSecretary;
 
-  int viceTreasurer;
+  String viceTreasurer;
 
-  List<int> members;
+  List<String> members;
 
-  int year;
+  String year;
 
   @override
   String get tableName => 'soc_body';
@@ -277,23 +278,23 @@ class SocBodyTable extends _i1.Table {
   /// the id will be null.
   final id = _i1.ColumnInt('id');
 
-  final socId = _i1.ColumnInt('socId');
+  final socId = _i1.ColumnUuid('socId');
 
-  final chairman = _i1.ColumnInt('chairman');
+  final chairman = _i1.ColumnString('chairman');
 
-  final secretary = _i1.ColumnInt('secretary');
+  final secretary = _i1.ColumnString('secretary');
 
-  final treasurer = _i1.ColumnInt('treasurer');
+  final treasurer = _i1.ColumnString('treasurer');
 
-  final viceChairman = _i1.ColumnInt('viceChairman');
+  final viceChairman = _i1.ColumnString('viceChairman');
 
-  final viceSecretary = _i1.ColumnInt('viceSecretary');
+  final viceSecretary = _i1.ColumnString('viceSecretary');
 
-  final viceTreasurer = _i1.ColumnInt('viceTreasurer');
+  final viceTreasurer = _i1.ColumnString('viceTreasurer');
 
   final members = _i1.ColumnSerializable('members');
 
-  final year = _i1.ColumnInt('year');
+  final year = _i1.ColumnString('year');
 
   @override
   List<_i1.Column> get columns => [

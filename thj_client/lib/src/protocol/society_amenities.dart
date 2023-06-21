@@ -33,7 +33,8 @@ class SocietyAmenities extends _i1.SerializableEntity {
   ) {
     return SocietyAmenities(
       id: serializationManager.deserialize<int?>(jsonSerialization['id']),
-      socId: serializationManager.deserialize<int>(jsonSerialization['socId']),
+      socId: serializationManager
+          .deserialize<_i1.UuidValue>(jsonSerialization['socId']),
       bikeParking: serializationManager
           .deserialize<bool>(jsonSerialization['bikeParking']),
       carParking: serializationManager
@@ -66,7 +67,7 @@ class SocietyAmenities extends _i1.SerializableEntity {
   /// the id will be null.
   int? id;
 
-  int socId;
+  _i1.UuidValue socId;
 
   bool bikeParking;
 

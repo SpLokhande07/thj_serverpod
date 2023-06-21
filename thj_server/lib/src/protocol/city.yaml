@@ -1,5 +1,6 @@
 class: City
 table: city
 fields:
-  districtId: int
+  districtId: UuidValue
   city: String
+  cityId: UuidValue

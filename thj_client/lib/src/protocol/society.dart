@@ -12,6 +12,7 @@ class Society extends _i1.SerializableEntity {
   Society({
     this.id,
     required this.socName,
+    required this.socId,
     required this.socRegNo,
     required this.socAddressId,
     required this.totalRoom,
@@ -32,10 +33,12 @@ class Society extends _i1.SerializableEntity {
       id: serializationManager.deserialize<int?>(jsonSerialization['id']),
       socName: serializationManager
           .deserialize<String>(jsonSerialization['socName']),
+      socId: serializationManager
+          .deserialize<_i1.UuidValue>(jsonSerialization['socId']),
       socRegNo: serializationManager
           .deserialize<String>(jsonSerialization['socRegNo']),
       socAddressId: serializationManager
-          .deserialize<int>(jsonSerialization['socAddressId']),
+          .deserialize<_i1.UuidValue>(jsonSerialization['socAddressId']),
       totalRoom:
           serializationManager.deserialize<int>(jsonSerialization['totalRoom']),
       totalBlock: serializationManager
@@ -62,9 +65,11 @@ class Society extends _i1.SerializableEntity {
 
   String socName;
 
+  _i1.UuidValue socId;
+
   String socRegNo;
 
-  int socAddressId;
+  _i1.UuidValue socAddressId;
 
   int totalRoom;
 
@@ -87,6 +92,7 @@ class Society extends _i1.SerializableEntity {
     return {
       'id': id,
       'socName': socName,
+      'socId': socId,
       'socRegNo': socRegNo,
       'socAddressId': socAddressId,
       'totalRoom': totalRoom,

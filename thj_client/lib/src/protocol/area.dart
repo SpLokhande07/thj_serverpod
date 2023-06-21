@@ -11,6 +11,7 @@ import 'package:serverpod_client/serverpod_client.dart' as _i1;
 class Area extends _i1.SerializableEntity {
   Area({
     this.id,
+    required this.areaId,
     required this.area,
     required this.cityId,
   });
@@ -21,9 +22,11 @@ class Area extends _i1.SerializableEntity {
   ) {
     return Area(
       id: serializationManager.deserialize<int?>(jsonSerialization['id']),
+      areaId: serializationManager
+          .deserialize<_i1.UuidValue>(jsonSerialization['areaId']),
       area: serializationManager.deserialize<String>(jsonSerialization['area']),
       cityId:
-          serializationManager.deserialize<int>(jsonSerialization['cityId']),
+          serializationManager.deserialize<String>(jsonSerialization['cityId']),
     );
   }
 
@@ -32,14 +35,17 @@ class Area extends _i1.SerializableEntity {
   /// the id will be null.
   int? id;
 
+  _i1.UuidValue areaId;
+
   String area;
 
-  int cityId;
+  String cityId;
 
   @override
   Map<String, dynamic> toJson() {
     return {
       'id': id,
+      'areaId': areaId,
       'area': area,
       'cityId': cityId,
     };

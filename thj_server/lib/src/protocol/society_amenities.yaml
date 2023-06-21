@@ -1,7 +1,7 @@
 class: SocietyAmenities
 table: soc_amenities
 fields:
-  socId: int
+  socId: UuidValue
   bikeParking: bool
   carParking: bool
   powerBackup: bool
