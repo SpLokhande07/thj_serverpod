@@ -50,7 +50,7 @@ class _THJLoginState extends State<THJLogin> {
                   ? "220164212378-q4ja58hpmsml222th110ct5k18rhvuls.apps.googleusercontent.com"
                   : "220164212378-ej6gjkvs3v5d32muctikn258v2vv88m5.apps.googleusercontent.com",
               redirectUri: Uri.parse(
-                  'https://f66d-103-179-3-215.ngrok-free.app/googlesignin'),
+                  'https://80e5-2402-3a80-4174-9747-6d0b-cc6d-cfd9-7c78.ngrok-free.app/googlesignin'),
             ),
           ],
         ),

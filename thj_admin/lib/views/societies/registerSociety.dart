@@ -9,19 +9,42 @@ class RegisterSociety extends StatefulWidget {
 }
 
 class _RegisterSocietyState extends State<RegisterSociety> {
+  TextEditingController txtSocName = TextEditingController();
+  TextEditingController txtSocRegNo = TextEditingController();
+  TextEditingController txtSocTotalBlock = TextEditingController();
+  TextEditingController txtSocTotalRoom = TextEditingController();
+  TextEditingController txtSocTotalShop = TextEditingController();
+  List<TextEditingController> txtSocMaxFloor = [];
+  List<TextEditingController> txtSocMaxRoom = [];
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-          child: CustomScrollView(
-        slivers: [
-          SliverAppBar(
-            title: CustomText(
-              text: "Register Society",
-            ),
+          child: Container(
+        height: MediaQuery.sizeOf(context).height * 0.9,
+        width: MediaQuery.sizeOf(context).width * 0.8,
+        child: Form(
+          child: Stepper(
+            steps: [
+              Step(
+                title: CustomText(text: "Society Details"),
+                content: const Column(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [],
+                ),
+              )
+            ],
           ),
-          SliverList(delegate: SliverChildListDelegate([]))
-        ],
+        ),
       )),
     );
   }

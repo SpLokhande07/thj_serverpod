@@ -46,14 +46,34 @@ class _MobileHomeState extends State<MobileHome> {
                     getIconWithTitle(
                         Icons.family_restroom_sharp, "Societies", size,
                         onTap: () {
-                          Navigator.push(
-                              context, MaterialPageRoute(builder: (_) => SocietyList()));
-                        }),
-                    getIconWithTitle(Icons.person, "Residents", size),
-                    getIconWithTitle(Icons.shopping_cart, "Shops", size),
-                    getIconWithTitle(Icons.slideshow, "Advertisement", size),
-                    getIconWithTitle(Icons.poll_outlined, "Poll", size),
-                    getIconWithTitle(Icons.auto_graph, "Analysis", size),
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (_) => SocietyList()));
+                    }),
+                    getIconWithTitle(Icons.person, "Residents", size,
+                        onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (_) => SocietyList()));
+                    }),
+                    getIconWithTitle(Icons.shopping_cart, "Shops", size,
+                        onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (_) => SocietyList()));
+                    }),
+                    getIconWithTitle(Icons.slideshow, "Advertisement", size,
+                        onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (_) => SocietyList()));
+                    }),
+                    getIconWithTitle(Icons.poll_outlined, "Poll", size,
+                        onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (_) => SocietyList()));
+                    }),
+                    getIconWithTitle(Icons.auto_graph, "Analysis", size,
+                        onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (_) => SocietyList()));
+                    }),
                   ],
                   addAutomaticKeepAlives: true,
                 ),
